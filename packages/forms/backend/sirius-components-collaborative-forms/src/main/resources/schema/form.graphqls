@@ -384,6 +384,26 @@ type Image implements Widget {
   maxWidth: String
 }
 
+type ImagePicker implements Widget {
+  id: ID!
+  label: String!
+  iconURL: [String!]!
+  diagnostics: [Diagnostic!]!
+  hasHelpText: Boolean!
+  readOnly: Boolean!
+  images: [String!]!
+  style: ImagePickerStyle
+}
+
+type ImagePickerStyle {
+  color: String
+  fontSize: Int
+  italic: Boolean
+  bold: Boolean
+  underline: Boolean
+  strikeThrough: Boolean
+}
+
 type RichText implements Widget {
   id: ID!
   label: String!
@@ -419,6 +439,8 @@ extend type Mutation {
   clickListItem(input: ClickListItemInput!): ClickListItemPayload!
   deleteListItem(input: DeleteListItemInput!): DeleteListItemPayload!
   pushButton(input: PushButtonInput!): PushButtonPayload!
+  addImage(input: AddImageInput!): AddImagePayload!
+  removeImage(input: RemoveImageInput!): RemoveImagePayload!
 }
 
 input EditCheckboxInput {
@@ -541,3 +563,23 @@ input PushButtonInput {
 }
 
 union PushButtonPayload = ErrorPayload | SuccessPayload
+
+input AddImageInput {
+  id: ID!
+  editingContextId: ID!
+  representationId: ID!
+  imagePickerId: ID!
+  imageId: ID!
+}
+
+union AddImagePayload = ErrorPayload | SuccessPayload
+
+input RemoveImageInput {
+  id: ID!
+  editingContextId: ID!
+  representationId: ID!
+  imagePickerId: ID!
+  imageId: ID!
+}
+
+union RemoveImagePayload = ErrorPayload | SuccessPayload

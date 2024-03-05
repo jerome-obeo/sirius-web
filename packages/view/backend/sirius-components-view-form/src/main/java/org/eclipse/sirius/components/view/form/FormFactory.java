@@ -95,6 +95,30 @@ public interface FormFactory extends EFactory {
     ImageDescription createImageDescription();
 
     /**
+     * Returns a new object of class '<em>Image Picker Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Image Picker Description</em>'.
+     * @generated
+     */
+    ImagePickerDescription createImagePickerDescription();
+
+    /**
+     * Returns a new object of class '<em>Add Image Operation</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Add Image Operation</em>'.
+     * @generated
+     */
+    AddImageOperation createAddImageOperation();
+
+    /**
+     * Returns a new object of class '<em>Remove Image Operation</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Remove Image Operation</em>'.
+     * @generated
+     */
+    RemoveImageOperation createRemoveImageOperation();
+
+    /**
      * Returns a new object of class '<em>Label Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return a new object of class '<em>Label Description</em>'.
@@ -234,6 +258,24 @@ public interface FormFactory extends EFactory {
      * @generated
      */
     ConditionalCheckboxDescriptionStyle createConditionalCheckboxDescriptionStyle();
+
+    /**
+     * Returns a new object of class '<em>Image Picker Description Style</em>'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return a new object of class '<em>Image Picker Description Style</em>'.
+     * @generated
+     */
+    ImagePickerDescriptionStyle createImagePickerDescriptionStyle();
+
+    /**
+     * Returns a new object of class '<em>Conditional Image Picker Description Style</em>'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return a new object of class '<em>Conditional Image Picker Description Style</em>'.
+     * @generated
+     */
+    ConditionalImagePickerDescriptionStyle createConditionalImagePickerDescriptionStyle();
 
     /**
      * Returns a new object of class '<em>Label Description Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->

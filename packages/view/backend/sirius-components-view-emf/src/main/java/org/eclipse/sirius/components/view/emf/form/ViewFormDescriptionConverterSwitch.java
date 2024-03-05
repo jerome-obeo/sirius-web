@@ -38,6 +38,7 @@ import org.eclipse.sirius.components.forms.ButtonStyle;
 import org.eclipse.sirius.components.forms.CheckboxStyle;
 import org.eclipse.sirius.components.forms.ContainerBorderStyle;
 import org.eclipse.sirius.components.forms.FlexDirection;
+import org.eclipse.sirius.components.forms.ImagePickerStyle;
 import org.eclipse.sirius.components.forms.LabelWidgetStyle;
 import org.eclipse.sirius.components.forms.LinkStyle;
 import org.eclipse.sirius.components.forms.ListStyle;
@@ -58,6 +59,7 @@ import org.eclipse.sirius.components.forms.description.FlexboxContainerDescripti
 import org.eclipse.sirius.components.forms.description.ForDescription;
 import org.eclipse.sirius.components.forms.description.IfDescription;
 import org.eclipse.sirius.components.forms.description.ImageDescription;
+import org.eclipse.sirius.components.forms.description.ImagePickerDescription;
 import org.eclipse.sirius.components.forms.description.LabelDescription;
 import org.eclipse.sirius.components.forms.description.LinkDescription;
 import org.eclipse.sirius.components.forms.description.ListDescription;
@@ -82,6 +84,7 @@ import org.eclipse.sirius.components.view.form.CheckboxDescriptionStyle;
 import org.eclipse.sirius.components.view.form.FormElementDescription;
 import org.eclipse.sirius.components.view.form.FormElementFor;
 import org.eclipse.sirius.components.view.form.FormElementIf;
+import org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LinkDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ListDescriptionStyle;
@@ -666,6 +669,45 @@ public class ViewFormDescriptionConverterSwitch extends FormSwitch<Optional<Abst
     }
 
     @Override
+    public Optional<AbstractControlDescription> caseImagePickerDescription(org.eclipse.sirius.components.view.form.ImagePickerDescription imagePickerDescription) {
+        String descriptionId = this.getDescriptionId(imagePickerDescription);
+        WidgetIdProvider idProvider = new WidgetIdProvider();
+        StringValueProvider labelProvider = this.getStringValueProvider(imagePickerDescription.getLabelExpression());
+        Function<VariableManager, Boolean> isReadOnlyProvider = this.getReadOnlyValueProvider(imagePickerDescription.getIsEnabledExpression());
+        Function<VariableManager, List<String>> valueProvider = this.getMultiValueProvider(imagePickerDescription.getValueExpression(), String.class);
+        BiFunction<VariableManager, String, IStatus> newImageProvider = this.getSingleValueHandler(imagePickerDescription.getAddImageOperation().getBody(), "newImage");
+        BiFunction<VariableManager, String, IStatus> removeImageProvider = this.getSingleValueHandler(imagePickerDescription.getRemoveImageOperation().getBody(), "image");
+        Function<VariableManager, ImagePickerStyle> styleProvider = variableManager -> {
+            var effectiveStyle = imagePickerDescription.getConditionalStyles().stream()
+                    .filter(style -> this.matches(style.getCondition(), variableManager))
+                    .map(ImagePickerDescriptionStyle.class::cast)
+                    .findFirst()
+                    .orElseGet(imagePickerDescription::getStyle);
+            if (effectiveStyle == null) {
+                return null;
+            }
+            return new ImagePickerStyleProvider(effectiveStyle).apply(variableManager);
+        };
+        ImagePickerDescription.Builder builder = ImagePickerDescription.newImagePickerDescription(descriptionId)
+                .idProvider(idProvider)
+                .targetObjectIdProvider(this.semanticTargetIdProvider)
+                .labelProvider(labelProvider)
+                .isReadOnlyProvider(isReadOnlyProvider)
+                .valueProvider(valueProvider)
+                .newValueHandler(newImageProvider)
+                .removeValueHandler(removeImageProvider)
+                .diagnosticsProvider(variableManager -> List.of())
+                .kindProvider(object -> "")
+                .messageProvider(object -> "")
+                .styleProvider(styleProvider);
+
+        if (imagePickerDescription.getHelpExpression() != null && !imagePickerDescription.getHelpExpression().isBlank()) {
+            builder.helpTextProvider(this.getStringValueProvider(imagePickerDescription.getHelpExpression()));
+        }
+        return Optional.of(builder.build());
+    }
+
+    @Override
     public Optional<AbstractControlDescription> caseFormElementFor(FormElementFor formElementFor) {
         String forDescriptionId = this.getDescriptionId(formElementFor);
 
@@ -935,9 +977,13 @@ public class ViewFormDescriptionConverterSwitch extends FormSwitch<Optional<Abst
     }
 
     private <T> BiFunction<VariableManager, T, IStatus> getNewValueHandler(List<Operation> operations) {
-        return (variableManager, newValue) -> {
+        return this.getSingleValueHandler(operations, ViewFormDescriptionConverter.NEW_VALUE);
+    }
+
+    private <T> BiFunction<VariableManager, T, IStatus> getSingleValueHandler(List<Operation> operations, String variableName) {
+        return (variableManager, value) -> {
             VariableManager childVariableManager = variableManager.createChild();
-            childVariableManager.put(ViewFormDescriptionConverter.NEW_VALUE, newValue);
+            childVariableManager.put(variableName, value);
             OperationInterpreter operationInterpreter = new OperationInterpreter(this.interpreter, this.editService);
             Optional<VariableManager> optionalVariableManager = operationInterpreter.executeOperations(operations, childVariableManager);
             if (optionalVariableManager.isEmpty()) {

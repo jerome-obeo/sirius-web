@@ -47,7 +47,7 @@ const initialState: FileUploadState = {
   file: null,
   message: DEFAULT_MESSAGE,
 };
-export const FileUpload = ({ onFileSelected, 'data-testid': dataTestId }: FileUploadProps) => {
+export const FileUpload = ({ onFileSelected, 'data-testid': dataTestId, disabled }: FileUploadProps) => {
   const styles = useFileUploadViewStyles();
   const fileInput = React.createRef<HTMLInputElement>();
 
@@ -67,13 +67,14 @@ export const FileUpload = ({ onFileSelected, 'data-testid': dataTestId }: FileUp
 
   // Update the file selection.
   const onFileInputChange = () => {
-    const { files } = fileInput.current;
-    let file: File = null;
-    if (files.length === 1) {
-      file = files[0];
+    let file: File | null = null;
+    if (fileInput.current) {
+      const { files } = fileInput.current;
+      if (files?.length === 1 && files[0]) {
+        file = files[0];
+        onFileSelected(file);
+      }
     }
-
-    onFileSelected(file);
     setState((prevState) => {
       return { ...prevState, file };
     });
@@ -89,6 +90,7 @@ export const FileUpload = ({ onFileSelected, 'data-testid': dataTestId }: FileUp
         ref={fileInput}
         onChange={onFileInputChange}
         data-testid={dataTestId}
+        disabled={disabled}
       />
 
       <Typography className={styles.message}>{message}</Typography>

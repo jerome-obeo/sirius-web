@@ -117,6 +117,24 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="urlExpression" eType="ecore:EDataType ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//InterpretedExpression"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxWidthExpression" eType="ecore:EDataType ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//InterpretedExpression"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImagePickerDescription" eSuperTypes="#//WidgetDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="ecore:EDataType ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//InterpretedExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsEnabledExpression" eType="ecore:EDataType ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//InterpretedExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="addImageOperation" eType="#//AddImageOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="removeImageOperation" eType="#//RemoveImageOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//ImagePickerDescriptionStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//ConditionalImagePickerDescriptionStyle" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddImageOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="ecore:EClass ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//Operation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveImageOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="ecore:EClass ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//Operation"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LabelDescription" eSuperTypes="#//WidgetDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="ecore:EDataType ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//InterpretedExpression"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//LabelDescriptionStyle"
@@ -253,6 +271,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalCheckboxDescriptionStyle"
       eSuperTypes="../../../../../sirius-components-view/src/main/resources/model/view.ecore#//Conditional #//CheckboxDescriptionStyle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImagePickerDescriptionStyle" eSuperTypes="#//WidgetDescriptionStyle ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//LabelStyle">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="ecore:EClass ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//UserColor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalImagePickerDescriptionStyle"
+      eSuperTypes="../../../../../sirius-components-view/src/main/resources/model/view.ecore#//Conditional #//ImagePickerDescriptionStyle"/>
   <eClassifiers xsi:type="ecore:EClass" name="LabelDescriptionStyle" eSuperTypes="#//WidgetDescriptionStyle ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//LabelStyle">
     <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="ecore:EClass ../../../../../sirius-components-view/src/main/resources/model/view.ecore#//UserColor"/>
   </eClassifiers>

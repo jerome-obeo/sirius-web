@@ -288,6 +288,78 @@ public class FormItemProviderAdapterFactory extends FormAdapterFactory implement
     }
 
     /**
+     * This keeps track of the one adapter used for all
+     * {@link org.eclipse.sirius.components.view.form.ImagePickerDescription} instances. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected ImagePickerDescriptionItemProvider imagePickerDescriptionItemProvider;
+
+    /**
+     * This creates an adapter for a {@link org.eclipse.sirius.components.view.form.ImagePickerDescription}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createImagePickerDescriptionAdapter() {
+        if (this.imagePickerDescriptionItemProvider == null) {
+            this.imagePickerDescriptionItemProvider = new ImagePickerDescriptionItemProvider(this);
+        }
+
+        return this.imagePickerDescriptionItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.eclipse.sirius.components.view.form.AddImageOperation} instances. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected AddImageOperationItemProvider addImageOperationItemProvider;
+
+    /**
+     * This creates an adapter for a {@link org.eclipse.sirius.components.view.form.AddImageOperation}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createAddImageOperationAdapter() {
+        if (this.addImageOperationItemProvider == null) {
+            this.addImageOperationItemProvider = new AddImageOperationItemProvider(this);
+        }
+
+        return this.addImageOperationItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.eclipse.sirius.components.view.form.RemoveImageOperation} instances. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected RemoveImageOperationItemProvider removeImageOperationItemProvider;
+
+    /**
+     * This creates an adapter for a {@link org.eclipse.sirius.components.view.form.RemoveImageOperation}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createRemoveImageOperationAdapter() {
+        if (this.removeImageOperationItemProvider == null) {
+            this.removeImageOperationItemProvider = new RemoveImageOperationItemProvider(this);
+        }
+
+        return this.removeImageOperationItemProvider;
+    }
+
+    /**
      * This keeps track of the one adapter used for all {@link org.eclipse.sirius.components.view.form.LabelDescription}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -690,6 +762,55 @@ public class FormItemProviderAdapterFactory extends FormAdapterFactory implement
         }
 
         return this.conditionalCheckboxDescriptionStyleItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle} instances. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ImagePickerDescriptionStyleItemProvider imagePickerDescriptionStyleItemProvider;
+
+    /**
+     * This creates an adapter for a {@link org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createImagePickerDescriptionStyleAdapter() {
+        if (this.imagePickerDescriptionStyleItemProvider == null) {
+            this.imagePickerDescriptionStyleItemProvider = new ImagePickerDescriptionStyleItemProvider(this);
+        }
+
+        return this.imagePickerDescriptionStyleItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle} instances. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ConditionalImagePickerDescriptionStyleItemProvider conditionalImagePickerDescriptionStyleItemProvider;
+
+    /**
+     * This creates an adapter for a
+     * {@link org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle}. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createConditionalImagePickerDescriptionStyleAdapter() {
+        if (this.conditionalImagePickerDescriptionStyleItemProvider == null) {
+            this.conditionalImagePickerDescriptionStyleItemProvider = new ConditionalImagePickerDescriptionStyleItemProvider(this);
+        }
+
+        return this.conditionalImagePickerDescriptionStyleItemProvider;
     }
 
     /**
@@ -1367,6 +1488,12 @@ public class FormItemProviderAdapterFactory extends FormAdapterFactory implement
             this.flexboxContainerDescriptionItemProvider.dispose();
         if (this.imageDescriptionItemProvider != null)
             this.imageDescriptionItemProvider.dispose();
+        if (this.imagePickerDescriptionItemProvider != null)
+            this.imagePickerDescriptionItemProvider.dispose();
+        if (this.addImageOperationItemProvider != null)
+            this.addImageOperationItemProvider.dispose();
+        if (this.removeImageOperationItemProvider != null)
+            this.removeImageOperationItemProvider.dispose();
         if (this.labelDescriptionItemProvider != null)
             this.labelDescriptionItemProvider.dispose();
         if (this.linkDescriptionItemProvider != null)
@@ -1401,6 +1528,10 @@ public class FormItemProviderAdapterFactory extends FormAdapterFactory implement
             this.checkboxDescriptionStyleItemProvider.dispose();
         if (this.conditionalCheckboxDescriptionStyleItemProvider != null)
             this.conditionalCheckboxDescriptionStyleItemProvider.dispose();
+        if (this.imagePickerDescriptionStyleItemProvider != null)
+            this.imagePickerDescriptionStyleItemProvider.dispose();
+        if (this.conditionalImagePickerDescriptionStyleItemProvider != null)
+            this.conditionalImagePickerDescriptionStyleItemProvider.dispose();
         if (this.labelDescriptionStyleItemProvider != null)
             this.labelDescriptionStyleItemProvider.dispose();
         if (this.conditionalLabelDescriptionStyleItemProvider != null)

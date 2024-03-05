@@ -99,6 +99,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute form.ecore#//ImageDescription/urlExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute form.ecore#//ImageDescription/maxWidthExpression"/>
     </genClasses>
+    <genClasses ecoreClass="form.ecore#//ImagePickerDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute form.ecore#//ImagePickerDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute form.ecore#//ImagePickerDescription/IsEnabledExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference form.ecore#//ImagePickerDescription/addImageOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference form.ecore#//ImagePickerDescription/removeImageOperation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference form.ecore#//ImagePickerDescription/style"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference form.ecore#//ImagePickerDescription/conditionalStyles"/>
+    </genClasses>
+    <genClasses ecoreClass="form.ecore#//AddImageOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference form.ecore#//AddImageOperation/body"/>
+    </genClasses>
+    <genClasses ecoreClass="form.ecore#//RemoveImageOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference form.ecore#//RemoveImageOperation/body"/>
+    </genClasses>
     <genClasses ecoreClass="form.ecore#//LabelDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute form.ecore#//LabelDescription/valueExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference form.ecore#//LabelDescription/style"/>
@@ -196,6 +210,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute form.ecore#//CheckboxDescriptionStyle/labelPlacement"/>
     </genClasses>
     <genClasses ecoreClass="form.ecore#//ConditionalCheckboxDescriptionStyle"/>
+    <genClasses ecoreClass="form.ecore#//ImagePickerDescriptionStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference form.ecore#//ImagePickerDescriptionStyle/color"/>
+    </genClasses>
+    <genClasses ecoreClass="form.ecore#//ConditionalImagePickerDescriptionStyle"/>
     <genClasses ecoreClass="form.ecore#//LabelDescriptionStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EReference form.ecore#//LabelDescriptionStyle/color"/>
     </genClasses>

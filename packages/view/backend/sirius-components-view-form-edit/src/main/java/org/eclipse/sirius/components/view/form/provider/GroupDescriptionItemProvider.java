@@ -235,6 +235,8 @@ public class GroupDescriptionItemProvider extends ItemProviderAdapter
 
         newChildDescriptors.add(this.createChildParameter(FormPackage.Literals.GROUP_DESCRIPTION__CHILDREN, FormFactory.eINSTANCE.createImageDescription()));
 
+        newChildDescriptors.add(this.createChildParameter(FormPackage.Literals.GROUP_DESCRIPTION__CHILDREN, FormFactory.eINSTANCE.createImagePickerDescription()));
+
         newChildDescriptors.add(this.createChildParameter(FormPackage.Literals.GROUP_DESCRIPTION__CHILDREN, FormFactory.eINSTANCE.createLabelDescription()));
 
         newChildDescriptors.add(this.createChildParameter(FormPackage.Literals.GROUP_DESCRIPTION__CHILDREN, FormFactory.eINSTANCE.createLinkDescription()));

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2023 Obeo.
+ * Copyright (c) 2024 Obeo.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -10,13 +10,16 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
+package org.eclipse.sirius.components.collaborative.forms.dto;
 
-export interface FileUploadProps {
-  onFileSelected: (file: File) => void;
-  'data-testid'?: string;
-}
+import java.util.UUID;
 
-export interface FileUploadState {
-  file: File | null;
-  message: string;
+import org.eclipse.sirius.components.collaborative.forms.api.IFormInput;
+
+/**
+ * The input object for the image picker image addition mutation.
+ *
+ * @author Jerome Gout
+ */
+public record AddImageInput(UUID id, String representationId, String editingContextId, String imagePickerId, String imageId) implements IFormInput {
 }

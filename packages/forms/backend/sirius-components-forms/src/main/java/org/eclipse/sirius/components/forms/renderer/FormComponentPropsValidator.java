@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2019, 2023 Obeo.
+ * Copyright (c) 2019, 2024 Obeo.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -38,6 +38,8 @@ import org.eclipse.sirius.components.forms.components.IfComponent;
 import org.eclipse.sirius.components.forms.components.IfComponentProps;
 import org.eclipse.sirius.components.forms.components.ImageComponent;
 import org.eclipse.sirius.components.forms.components.ImageComponentProps;
+import org.eclipse.sirius.components.forms.components.ImagePickerComponent;
+import org.eclipse.sirius.components.forms.components.ImagePickerComponentProps;
 import org.eclipse.sirius.components.forms.components.LabelWidgetComponent;
 import org.eclipse.sirius.components.forms.components.LabelWidgetComponentProps;
 import org.eclipse.sirius.components.forms.components.LinkComponent;
@@ -132,6 +134,8 @@ public class FormComponentPropsValidator implements IComponentPropsValidator {
             checkValidProps = props instanceof TreeComponentProps;
         } else if (ImageComponent.class.equals(componentType)) {
             checkValidProps = props instanceof ImageComponentProps;
+        } else if (ImagePickerComponent.class.equals(componentType)) {
+            checkValidProps = props instanceof ImagePickerComponentProps;
         } else if (RichTextComponent.class.equals(componentType)) {
             checkValidProps = props instanceof RichTextComponentProps;
         } else if (ToolbarActionComponent.class.equals(componentType)) {

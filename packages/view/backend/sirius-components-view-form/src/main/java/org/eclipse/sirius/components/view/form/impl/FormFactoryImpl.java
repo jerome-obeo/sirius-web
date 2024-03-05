@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.sirius.components.view.form.AddImageOperation;
 import org.eclipse.sirius.components.view.form.BarChartDescription;
 import org.eclipse.sirius.components.view.form.BarChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ButtonDescription;
@@ -28,6 +29,7 @@ import org.eclipse.sirius.components.view.form.ConditionalBarChartDescriptionSty
 import org.eclipse.sirius.components.view.form.ConditionalButtonDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalCheckboxDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalContainerBorderStyle;
+import org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLinkDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalListDescriptionStyle;
@@ -49,6 +51,8 @@ import org.eclipse.sirius.components.view.form.FormPackage;
 import org.eclipse.sirius.components.view.form.GroupDescription;
 import org.eclipse.sirius.components.view.form.GroupDisplayMode;
 import org.eclipse.sirius.components.view.form.ImageDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LabelDescription;
 import org.eclipse.sirius.components.view.form.LabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LabelPlacement;
@@ -63,6 +67,7 @@ import org.eclipse.sirius.components.view.form.PieChartDescription;
 import org.eclipse.sirius.components.view.form.PieChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.RadioDescription;
 import org.eclipse.sirius.components.view.form.RadioDescriptionStyle;
+import org.eclipse.sirius.components.view.form.RemoveImageOperation;
 import org.eclipse.sirius.components.view.form.RichTextDescription;
 import org.eclipse.sirius.components.view.form.SelectDescription;
 import org.eclipse.sirius.components.view.form.SelectDescriptionStyle;
@@ -128,6 +133,12 @@ public class FormFactoryImpl extends EFactoryImpl implements FormFactory {
                 return this.createFlexboxContainerDescription();
             case FormPackage.IMAGE_DESCRIPTION:
                 return this.createImageDescription();
+            case FormPackage.IMAGE_PICKER_DESCRIPTION:
+                return this.createImagePickerDescription();
+            case FormPackage.ADD_IMAGE_OPERATION:
+                return this.createAddImageOperation();
+            case FormPackage.REMOVE_IMAGE_OPERATION:
+                return this.createRemoveImageOperation();
             case FormPackage.LABEL_DESCRIPTION:
                 return this.createLabelDescription();
             case FormPackage.LINK_DESCRIPTION:
@@ -162,6 +173,10 @@ public class FormFactoryImpl extends EFactoryImpl implements FormFactory {
                 return this.createCheckboxDescriptionStyle();
             case FormPackage.CONDITIONAL_CHECKBOX_DESCRIPTION_STYLE:
                 return this.createConditionalCheckboxDescriptionStyle();
+            case FormPackage.IMAGE_PICKER_DESCRIPTION_STYLE:
+                return this.createImagePickerDescriptionStyle();
+            case FormPackage.CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE:
+                return this.createConditionalImagePickerDescriptionStyle();
             case FormPackage.LABEL_DESCRIPTION_STYLE:
                 return this.createLabelDescriptionStyle();
             case FormPackage.CONDITIONAL_LABEL_DESCRIPTION_STYLE:
@@ -339,6 +354,39 @@ public class FormFactoryImpl extends EFactoryImpl implements FormFactory {
     public ImageDescription createImageDescription() {
         ImageDescriptionImpl imageDescription = new ImageDescriptionImpl();
         return imageDescription;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ImagePickerDescription createImagePickerDescription() {
+        ImagePickerDescriptionImpl imagePickerDescription = new ImagePickerDescriptionImpl();
+        return imagePickerDescription;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public AddImageOperation createAddImageOperation() {
+        AddImageOperationImpl addImageOperation = new AddImageOperationImpl();
+        return addImageOperation;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public RemoveImageOperation createRemoveImageOperation() {
+        RemoveImageOperationImpl removeImageOperation = new RemoveImageOperationImpl();
+        return removeImageOperation;
     }
 
     /**
@@ -526,6 +574,28 @@ public class FormFactoryImpl extends EFactoryImpl implements FormFactory {
     public ConditionalCheckboxDescriptionStyle createConditionalCheckboxDescriptionStyle() {
         ConditionalCheckboxDescriptionStyleImpl conditionalCheckboxDescriptionStyle = new ConditionalCheckboxDescriptionStyleImpl();
         return conditionalCheckboxDescriptionStyle;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ImagePickerDescriptionStyle createImagePickerDescriptionStyle() {
+        ImagePickerDescriptionStyleImpl imagePickerDescriptionStyle = new ImagePickerDescriptionStyleImpl();
+        return imagePickerDescriptionStyle;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ConditionalImagePickerDescriptionStyle createConditionalImagePickerDescriptionStyle() {
+        ConditionalImagePickerDescriptionStyleImpl conditionalImagePickerDescriptionStyle = new ConditionalImagePickerDescriptionStyleImpl();
+        return conditionalImagePickerDescriptionStyle;
     }
 
     /**

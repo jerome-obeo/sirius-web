@@ -19,6 +19,7 @@ import {
   GQLCheckbox,
   GQLFlexboxContainer,
   GQLImage,
+  GQLImagePicker,
   GQLLabelWidget,
   GQLLink,
   GQLList,
@@ -36,6 +37,7 @@ import { ChartWidgetPropertySection } from './ChartWidgetPropertySection';
 import { CheckboxPropertySection } from './CheckboxPropertySection';
 import { FlexboxContainerPropertySection } from './FlexboxContainerPropertySection';
 import { ImagePropertySection } from './ImagePropertySection';
+import { ImagePickerPropertySection } from './imagepicker/ImagePickerPropertySection';
 import { LabelWidgetPropertySection } from './LabelWidgetPropertySection';
 import { LinkPropertySection } from './LinkPropertySection';
 import { ListPropertySection } from './ListPropertySection';
@@ -63,6 +65,7 @@ const isFlexboxContainer = (widget: GQLWidget): widget is GQLFlexboxContainer =>
 const isTree = (widget: GQLWidget): widget is GQLTree => widget.__typename === 'TreeWidget';
 const isImage = (widget: GQLWidget): widget is GQLImage => widget.__typename === 'Image';
 const isRichText = (widget: GQLWidget): widget is GQLRichText => widget.__typename === 'RichText';
+const isImagePicker = (widget: GQLWidget): widget is GQLImagePicker => widget.__typename === 'ImagePicker';
 
 export const PropertySection = ({
   editingContextId,
@@ -206,6 +209,17 @@ export const PropertySection = ({
   } else if (isImage(widget)) {
     propertySection = (
       <ImagePropertySection editingContextId={editingContextId} formId={formId} widget={widget} key={widget.id} />
+    );
+  } else if (isImagePicker(widget)) {
+    propertySection = (
+      <ImagePickerPropertySection
+        editingContextId={editingContextId}
+        formId={formId}
+        widget={widget}
+        key={widget.id}
+        subscribers={subscribers}
+        readOnly={readOnly}
+      />
     );
   } else if (isRichText(widget)) {
     propertySection = (

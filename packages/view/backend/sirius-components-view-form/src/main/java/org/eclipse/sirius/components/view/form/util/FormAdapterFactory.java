@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.components.view.Conditional;
 import org.eclipse.sirius.components.view.LabelStyle;
 import org.eclipse.sirius.components.view.RepresentationDescription;
+import org.eclipse.sirius.components.view.form.AddImageOperation;
 import org.eclipse.sirius.components.view.form.BarChartDescription;
 import org.eclipse.sirius.components.view.form.BarChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ButtonDescription;
@@ -29,6 +30,7 @@ import org.eclipse.sirius.components.view.form.ConditionalBarChartDescriptionSty
 import org.eclipse.sirius.components.view.form.ConditionalButtonDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalCheckboxDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalContainerBorderStyle;
+import org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLinkDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalListDescriptionStyle;
@@ -47,6 +49,8 @@ import org.eclipse.sirius.components.view.form.FormElementIf;
 import org.eclipse.sirius.components.view.form.FormPackage;
 import org.eclipse.sirius.components.view.form.GroupDescription;
 import org.eclipse.sirius.components.view.form.ImageDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LabelDescription;
 import org.eclipse.sirius.components.view.form.LabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LinkDescription;
@@ -60,6 +64,7 @@ import org.eclipse.sirius.components.view.form.PieChartDescription;
 import org.eclipse.sirius.components.view.form.PieChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.RadioDescription;
 import org.eclipse.sirius.components.view.form.RadioDescriptionStyle;
+import org.eclipse.sirius.components.view.form.RemoveImageOperation;
 import org.eclipse.sirius.components.view.form.RichTextDescription;
 import org.eclipse.sirius.components.view.form.SelectDescription;
 import org.eclipse.sirius.components.view.form.SelectDescriptionStyle;
@@ -173,6 +178,21 @@ public class FormAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseImagePickerDescription(ImagePickerDescription object) {
+            return FormAdapterFactory.this.createImagePickerDescriptionAdapter();
+        }
+
+        @Override
+        public Adapter caseAddImageOperation(AddImageOperation object) {
+            return FormAdapterFactory.this.createAddImageOperationAdapter();
+        }
+
+        @Override
+        public Adapter caseRemoveImageOperation(RemoveImageOperation object) {
+            return FormAdapterFactory.this.createRemoveImageOperationAdapter();
+        }
+
+        @Override
         public Adapter caseLabelDescription(LabelDescription object) {
             return FormAdapterFactory.this.createLabelDescriptionAdapter();
         }
@@ -260,6 +280,16 @@ public class FormAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseConditionalCheckboxDescriptionStyle(ConditionalCheckboxDescriptionStyle object) {
             return FormAdapterFactory.this.createConditionalCheckboxDescriptionStyleAdapter();
+        }
+
+        @Override
+        public Adapter caseImagePickerDescriptionStyle(ImagePickerDescriptionStyle object) {
+            return FormAdapterFactory.this.createImagePickerDescriptionStyleAdapter();
+        }
+
+        @Override
+        public Adapter caseConditionalImagePickerDescriptionStyle(ConditionalImagePickerDescriptionStyle object) {
+            return FormAdapterFactory.this.createConditionalImagePickerDescriptionStyleAdapter();
         }
 
         @Override
@@ -547,6 +577,48 @@ public class FormAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription <em>Image Picker Description</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+     * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription
+     * @generated
+     */
+    public Adapter createImagePickerDescriptionAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.eclipse.sirius.components.view.form.AddImageOperation
+     * <em>Add Image Operation</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+     * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+     * end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.eclipse.sirius.components.view.form.AddImageOperation
+     * @generated
+     */
+    public Adapter createAddImageOperationAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.eclipse.sirius.components.view.form.RemoveImageOperation
+     * <em>Remove Image Operation</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+     * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+     * end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.eclipse.sirius.components.view.form.RemoveImageOperation
+     * @generated
+     */
+    public Adapter createRemoveImageOperationAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link org.eclipse.sirius.components.view.form.LabelDescription
      * <em>Label Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
      * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
@@ -798,6 +870,35 @@ public class FormAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createConditionalCheckboxDescriptionStyleAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle <em>Image Picker Description
+     * Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle
+     * @generated
+     */
+    public Adapter createImagePickerDescriptionStyleAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class
+     * '{@link org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle <em>Conditional Image
+     * Picker Description Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+     * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+     * end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle
+     * @generated
+     */
+    public Adapter createConditionalImagePickerDescriptionStyleAdapter() {
         return null;
     }
 

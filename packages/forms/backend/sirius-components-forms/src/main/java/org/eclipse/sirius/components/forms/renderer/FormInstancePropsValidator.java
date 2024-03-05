@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2019, 2023 Obeo.
+ * Copyright (c) 2019, 2024 Obeo.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.sirius.components.forms.elements.FlexboxContainerElementProps
 import org.eclipse.sirius.components.forms.elements.FormElementProps;
 import org.eclipse.sirius.components.forms.elements.GroupElementProps;
 import org.eclipse.sirius.components.forms.elements.ImageElementProps;
+import org.eclipse.sirius.components.forms.elements.ImagePickerElementProps;
 import org.eclipse.sirius.components.forms.elements.LabelWidgetElementProps;
 import org.eclipse.sirius.components.forms.elements.LinkElementProps;
 import org.eclipse.sirius.components.forms.elements.ListElementProps;
@@ -99,6 +100,8 @@ public class FormInstancePropsValidator implements IInstancePropsValidator {
             checkValidProps = props instanceof TreeElementProps;
         } else if (ImageElementProps.TYPE.equals(type)) {
             checkValidProps = props instanceof ImageElementProps;
+        } else if (ImagePickerElementProps.TYPE.equals(type)) {
+            checkValidProps = props instanceof ImagePickerElementProps;
         } else if (RichTextElementProps.TYPE.equals(type)) {
             checkValidProps = props instanceof RichTextElementProps;
         } else if (ToolbarActionElementProps.TYPE.equals(type)) {

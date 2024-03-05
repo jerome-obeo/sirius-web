@@ -412,3 +412,17 @@ export interface GQLMessage {
   body: string;
   level: string;
 }
+
+export interface GQLImagePicker extends GQLWidget {
+  images: string[];
+  style: GQLImagePickerWidgetStyle;
+}
+
+export interface GQLImagePickerWidgetStyle {
+  color: string | null;
+  fontSize: number | null;
+  italic: boolean | null;
+  bold: boolean | null;
+  underline: boolean | null;
+  strikeThrough: boolean | null;
+}

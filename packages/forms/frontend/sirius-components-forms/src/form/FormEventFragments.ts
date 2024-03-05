@@ -300,6 +300,20 @@ export const widgetFields = (contributions: Array<WidgetContribution>) => `
     maxWidth
   }
 
+  fragment imagePickerFields on ImagePicker {
+    label
+    iconURL
+    images
+    style {
+      color
+      fontSize
+      italic
+      bold
+      underline
+      strikeThrough
+    }
+  }
+
   fragment richTextFields on RichText {
     label
     iconURL
@@ -358,6 +372,9 @@ export const widgetFields = (contributions: Array<WidgetContribution>) => `
     }
     ... on Image {
       ...imageFields
+    }
+    ... on ImagePicker {
+      ...imagePickerFields
     }
     ... on RichText {
       ...richTextFields

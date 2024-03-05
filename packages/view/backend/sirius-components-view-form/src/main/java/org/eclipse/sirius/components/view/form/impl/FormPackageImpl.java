@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.sirius.components.view.ViewPackage;
+import org.eclipse.sirius.components.view.form.AddImageOperation;
 import org.eclipse.sirius.components.view.form.BarChartDescription;
 import org.eclipse.sirius.components.view.form.BarChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ButtonDescription;
@@ -29,6 +30,7 @@ import org.eclipse.sirius.components.view.form.ConditionalBarChartDescriptionSty
 import org.eclipse.sirius.components.view.form.ConditionalButtonDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalCheckboxDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalContainerBorderStyle;
+import org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLinkDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalListDescriptionStyle;
@@ -51,6 +53,8 @@ import org.eclipse.sirius.components.view.form.FormPackage;
 import org.eclipse.sirius.components.view.form.GroupDescription;
 import org.eclipse.sirius.components.view.form.GroupDisplayMode;
 import org.eclipse.sirius.components.view.form.ImageDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LabelDescription;
 import org.eclipse.sirius.components.view.form.LabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LabelPlacement;
@@ -65,6 +69,7 @@ import org.eclipse.sirius.components.view.form.PieChartDescription;
 import org.eclipse.sirius.components.view.form.PieChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.RadioDescription;
 import org.eclipse.sirius.components.view.form.RadioDescriptionStyle;
+import org.eclipse.sirius.components.view.form.RemoveImageOperation;
 import org.eclipse.sirius.components.view.form.RichTextDescription;
 import org.eclipse.sirius.components.view.form.SelectDescription;
 import org.eclipse.sirius.components.view.form.SelectDescriptionStyle;
@@ -151,6 +156,27 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
      * @generated
      */
     private EClass imageDescriptionEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass imagePickerDescriptionEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass addImageOperationEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass removeImageOperationEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -277,6 +303,20 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
      * @generated
      */
     private EClass conditionalCheckboxDescriptionStyleEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass imagePickerDescriptionStyleEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass conditionalImagePickerDescriptionStyleEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1062,6 +1102,116 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
     @Override
     public EAttribute getImageDescription_MaxWidthExpression() {
         return (EAttribute) this.imageDescriptionEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getImagePickerDescription() {
+        return this.imagePickerDescriptionEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EAttribute getImagePickerDescription_ValueExpression() {
+        return (EAttribute) this.imagePickerDescriptionEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EAttribute getImagePickerDescription_IsEnabledExpression() {
+        return (EAttribute) this.imagePickerDescriptionEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getImagePickerDescription_AddImageOperation() {
+        return (EReference) this.imagePickerDescriptionEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getImagePickerDescription_RemoveImageOperation() {
+        return (EReference) this.imagePickerDescriptionEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getImagePickerDescription_Style() {
+        return (EReference) this.imagePickerDescriptionEClass.getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getImagePickerDescription_ConditionalStyles() {
+        return (EReference) this.imagePickerDescriptionEClass.getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getAddImageOperation() {
+        return this.addImageOperationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getAddImageOperation_Body() {
+        return (EReference) this.addImageOperationEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getRemoveImageOperation() {
+        return this.removeImageOperationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getRemoveImageOperation_Body() {
+        return (EReference) this.removeImageOperationEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -1900,6 +2050,36 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
      * @generated
      */
     @Override
+    public EClass getImagePickerDescriptionStyle() {
+        return this.imagePickerDescriptionStyleEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getImagePickerDescriptionStyle_Color() {
+        return (EReference) this.imagePickerDescriptionStyleEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getConditionalImagePickerDescriptionStyle() {
+        return this.conditionalImagePickerDescriptionStyleEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EClass getLabelDescriptionStyle() {
         return this.labelDescriptionStyleEClass;
     }
@@ -2507,6 +2687,20 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
         this.createEAttribute(this.imageDescriptionEClass, IMAGE_DESCRIPTION__URL_EXPRESSION);
         this.createEAttribute(this.imageDescriptionEClass, IMAGE_DESCRIPTION__MAX_WIDTH_EXPRESSION);
 
+        this.imagePickerDescriptionEClass = this.createEClass(IMAGE_PICKER_DESCRIPTION);
+        this.createEAttribute(this.imagePickerDescriptionEClass, IMAGE_PICKER_DESCRIPTION__VALUE_EXPRESSION);
+        this.createEAttribute(this.imagePickerDescriptionEClass, IMAGE_PICKER_DESCRIPTION__IS_ENABLED_EXPRESSION);
+        this.createEReference(this.imagePickerDescriptionEClass, IMAGE_PICKER_DESCRIPTION__ADD_IMAGE_OPERATION);
+        this.createEReference(this.imagePickerDescriptionEClass, IMAGE_PICKER_DESCRIPTION__REMOVE_IMAGE_OPERATION);
+        this.createEReference(this.imagePickerDescriptionEClass, IMAGE_PICKER_DESCRIPTION__STYLE);
+        this.createEReference(this.imagePickerDescriptionEClass, IMAGE_PICKER_DESCRIPTION__CONDITIONAL_STYLES);
+
+        this.addImageOperationEClass = this.createEClass(ADD_IMAGE_OPERATION);
+        this.createEReference(this.addImageOperationEClass, ADD_IMAGE_OPERATION__BODY);
+
+        this.removeImageOperationEClass = this.createEClass(REMOVE_IMAGE_OPERATION);
+        this.createEReference(this.removeImageOperationEClass, REMOVE_IMAGE_OPERATION__BODY);
+
         this.labelDescriptionEClass = this.createEClass(LABEL_DESCRIPTION);
         this.createEAttribute(this.labelDescriptionEClass, LABEL_DESCRIPTION__VALUE_EXPRESSION);
         this.createEReference(this.labelDescriptionEClass, LABEL_DESCRIPTION__STYLE);
@@ -2607,6 +2801,11 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
         this.createEAttribute(this.checkboxDescriptionStyleEClass, CHECKBOX_DESCRIPTION_STYLE__LABEL_PLACEMENT);
 
         this.conditionalCheckboxDescriptionStyleEClass = this.createEClass(CONDITIONAL_CHECKBOX_DESCRIPTION_STYLE);
+
+        this.imagePickerDescriptionStyleEClass = this.createEClass(IMAGE_PICKER_DESCRIPTION_STYLE);
+        this.createEReference(this.imagePickerDescriptionStyleEClass, IMAGE_PICKER_DESCRIPTION_STYLE__COLOR);
+
+        this.conditionalImagePickerDescriptionStyleEClass = this.createEClass(CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE);
 
         this.labelDescriptionStyleEClass = this.createEClass(LABEL_DESCRIPTION_STYLE);
         this.createEReference(this.labelDescriptionStyleEClass, LABEL_DESCRIPTION_STYLE__COLOR);
@@ -2723,6 +2922,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
         this.checkboxDescriptionEClass.getESuperTypes().add(this.getWidgetDescription());
         this.flexboxContainerDescriptionEClass.getESuperTypes().add(this.getWidgetDescription());
         this.imageDescriptionEClass.getESuperTypes().add(this.getWidgetDescription());
+        this.imagePickerDescriptionEClass.getESuperTypes().add(this.getWidgetDescription());
         this.labelDescriptionEClass.getESuperTypes().add(this.getWidgetDescription());
         this.linkDescriptionEClass.getESuperTypes().add(this.getWidgetDescription());
         this.listDescriptionEClass.getESuperTypes().add(this.getWidgetDescription());
@@ -2745,6 +2945,10 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
         this.checkboxDescriptionStyleEClass.getESuperTypes().add(this.getWidgetDescriptionStyle());
         this.conditionalCheckboxDescriptionStyleEClass.getESuperTypes().add(theViewPackage.getConditional());
         this.conditionalCheckboxDescriptionStyleEClass.getESuperTypes().add(this.getCheckboxDescriptionStyle());
+        this.imagePickerDescriptionStyleEClass.getESuperTypes().add(this.getWidgetDescriptionStyle());
+        this.imagePickerDescriptionStyleEClass.getESuperTypes().add(theViewPackage.getLabelStyle());
+        this.conditionalImagePickerDescriptionStyleEClass.getESuperTypes().add(theViewPackage.getConditional());
+        this.conditionalImagePickerDescriptionStyleEClass.getESuperTypes().add(this.getImagePickerDescriptionStyle());
         this.labelDescriptionStyleEClass.getESuperTypes().add(this.getWidgetDescriptionStyle());
         this.labelDescriptionStyleEClass.getESuperTypes().add(theViewPackage.getLabelStyle());
         this.conditionalLabelDescriptionStyleEClass.getESuperTypes().add(theViewPackage.getConditional());
@@ -2894,6 +3098,28 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getImageDescription_MaxWidthExpression(), theViewPackage.getInterpretedExpression(), "maxWidthExpression", null, 0, 1, ImageDescription.class, !IS_TRANSIENT,
                 !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        this.initEClass(this.imagePickerDescriptionEClass, ImagePickerDescription.class, "ImagePickerDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEAttribute(this.getImagePickerDescription_ValueExpression(), theViewPackage.getInterpretedExpression(), "valueExpression", null, 0, 1, ImagePickerDescription.class, !IS_TRANSIENT,
+                !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(this.getImagePickerDescription_IsEnabledExpression(), theViewPackage.getInterpretedExpression(), "IsEnabledExpression", null, 0, 1, ImagePickerDescription.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getImagePickerDescription_AddImageOperation(), this.getAddImageOperation(), null, "addImageOperation", null, 0, 1, ImagePickerDescription.class, !IS_TRANSIENT,
+                !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getImagePickerDescription_RemoveImageOperation(), this.getRemoveImageOperation(), null, "removeImageOperation", null, 0, 1, ImagePickerDescription.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getImagePickerDescription_Style(), this.getImagePickerDescriptionStyle(), null, "style", null, 0, 1, ImagePickerDescription.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getImagePickerDescription_ConditionalStyles(), this.getConditionalImagePickerDescriptionStyle(), null, "conditionalStyles", null, 0, -1, ImagePickerDescription.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        this.initEClass(this.addImageOperationEClass, AddImageOperation.class, "AddImageOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getAddImageOperation_Body(), theViewPackage.getOperation(), null, "body", null, 0, -1, AddImageOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        this.initEClass(this.removeImageOperationEClass, RemoveImageOperation.class, "RemoveImageOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getRemoveImageOperation_Body(), theViewPackage.getOperation(), null, "body", null, 0, -1, RemoveImageOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.labelDescriptionEClass, LabelDescription.class, "LabelDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getLabelDescription_ValueExpression(), theViewPackage.getInterpretedExpression(), "valueExpression", null, 0, 1, LabelDescription.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -3062,6 +3288,13 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
                 IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.conditionalCheckboxDescriptionStyleEClass, ConditionalCheckboxDescriptionStyle.class, "ConditionalCheckboxDescriptionStyle", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+
+        this.initEClass(this.imagePickerDescriptionStyleEClass, ImagePickerDescriptionStyle.class, "ImagePickerDescriptionStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getImagePickerDescriptionStyle_Color(), theViewPackage.getUserColor(), null, "color", null, 0, 1, ImagePickerDescriptionStyle.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        this.initEClass(this.conditionalImagePickerDescriptionStyleEClass, ConditionalImagePickerDescriptionStyle.class, "ConditionalImagePickerDescriptionStyle", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.labelDescriptionStyleEClass, LabelDescriptionStyle.class, "LabelDescriptionStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

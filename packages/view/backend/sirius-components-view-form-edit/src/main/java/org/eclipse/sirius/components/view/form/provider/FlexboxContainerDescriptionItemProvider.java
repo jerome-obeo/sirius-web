@@ -30,6 +30,7 @@ import org.eclipse.sirius.components.view.form.FlexboxContainerDescription;
 import org.eclipse.sirius.components.view.form.FormFactory;
 import org.eclipse.sirius.components.view.form.FormPackage;
 import org.eclipse.sirius.components.view.form.ImageDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescription;
 import org.eclipse.sirius.components.view.form.LabelDescription;
 import org.eclipse.sirius.components.view.form.LinkDescription;
 import org.eclipse.sirius.components.view.form.ListDescription;
@@ -219,6 +220,10 @@ public class FlexboxContainerDescriptionItemProvider extends WidgetDescriptionIt
 
         ImageDescription imageDescription = FormFactory.eINSTANCE.createImageDescription();
         newChildDescriptors.add(this.createChildParameter(FormPackage.Literals.FLEXBOX_CONTAINER_DESCRIPTION__CHILDREN, imageDescription));
+
+        ImagePickerDescription imagePickerDescription = FormFactory.eINSTANCE.createImagePickerDescription();
+        imagePickerDescription.setStyle(FormFactory.eINSTANCE.createImagePickerDescriptionStyle());
+        newChildDescriptors.add(this.createChildParameter(FormPackage.Literals.FLEXBOX_CONTAINER_DESCRIPTION__CHILDREN, imagePickerDescription));
 
         LabelDescription labelDescription = FormFactory.eINSTANCE.createLabelDescription();
         labelDescription.setStyle(FormFactory.eINSTANCE.createLabelDescriptionStyle());

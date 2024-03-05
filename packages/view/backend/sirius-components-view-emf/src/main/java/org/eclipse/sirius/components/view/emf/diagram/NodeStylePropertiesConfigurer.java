@@ -13,8 +13,8 @@
 package org.eclipse.sirius.components.view.emf.diagram;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.sirius.components.collaborative.api.ChangeKind;
 import org.eclipse.sirius.components.collaborative.diagrams.api.IParametricSVGImageRegistry;
 import org.eclipse.sirius.components.collaborative.forms.services.api.IPropertiesDescriptionRegistry;
 import org.eclipse.sirius.components.collaborative.forms.services.api.IPropertiesDescriptionRegistryConfigurer;
@@ -39,6 +40,7 @@ import org.eclipse.sirius.components.forms.components.SelectComponent;
 import org.eclipse.sirius.components.forms.description.AbstractControlDescription;
 import org.eclipse.sirius.components.forms.description.GroupDescription;
 import org.eclipse.sirius.components.forms.description.ImageDescription;
+import org.eclipse.sirius.components.forms.description.ImagePickerDescription;
 import org.eclipse.sirius.components.forms.description.PageDescription;
 import org.eclipse.sirius.components.forms.description.SelectDescription;
 import org.eclipse.sirius.components.representations.Failure;
@@ -327,39 +329,50 @@ public class NodeStylePropertiesConfigurer implements IPropertiesDescriptionRegi
                 .build();
     }
 
-    private SelectDescription createShapeSelectionField() {
-        return SelectDescription.newSelectDescription("nodestyle.shapeSelector")
+    private ImagePickerDescription createShapeSelectionField() {
+        return ImagePickerDescription.newImagePickerDescription("nodestyle.shapeSelector")
                 .idProvider(variableManager -> "nodestyle.shapeSelector")
                 .targetObjectIdProvider(this.propertiesConfigurerService.getSemanticTargetIdProvider())
                 .labelProvider(variableManager -> "Shape")
-                .valueProvider(variableManager -> variableManager.get(VariableManager.SELF, ImageNodeStyleDescription.class).map(ImageNodeStyleDescription::getShape).orElse(EMPTY))
-                .optionsProvider(variableManager -> {
-                    Optional<String> optionalEditingContextId = variableManager.get(IEditingContext.EDITING_CONTEXT, IEditingContext.class).map(IEditingContext::getId);
-
-                    Stream<CustomImageMetadata> parametricSVGs = this.parametricSVGImageRegistries.stream()
-                            .flatMap(service -> service.getImages().stream())
-                            .map(image -> new CustomImageMetadata(image.getId(), optionalEditingContextId, image.getLabel(), "image/svg+xml"));
-
-                    List<CustomImageMetadata> customImages = optionalEditingContextId.map(this.customImageSearchService::getAvailableImages).orElse(List.of());
-
-                    return Stream.concat(parametricSVGs, customImages.stream())
-                            .sorted(Comparator.comparing(CustomImageMetadata::getLabel))
-                            .toList();
-                })
-                .optionIdProvider(variableManager -> variableManager.get(SelectComponent.CANDIDATE_VARIABLE, CustomImageMetadata.class)
-                        .map(CustomImageMetadata::getId)
-                        .map(UUID::toString)
-                        .orElse(EMPTY))
-                .optionLabelProvider(variableManager -> variableManager.get(SelectComponent.CANDIDATE_VARIABLE, CustomImageMetadata.class)
-                        .map(CustomImageMetadata::getLabel)
-                        .orElse(EMPTY))
-                .optionIconURLProvider(variableManager -> variableManager.get(SelectComponent.CANDIDATE_VARIABLE, Object.class).map(this.objectService::getImagePath)
-                        .orElse(List.of()))
+                .valueProvider(variableManager -> variableManager.get(VariableManager.SELF, ImageNodeStyleDescription.class).map(ImageNodeStyleDescription::getShape).map(List::of).orElse(List.of()))
                 .newValueHandler(this.getNewShapeValueHandler())
+                .removeValueHandler(this.getRemoveShapeValueHandler())
                 .diagnosticsProvider(this.propertiesConfigurerService.getDiagnosticsProvider(DiagramPackage.Literals.IMAGE_NODE_STYLE_DESCRIPTION__SHAPE))
                 .kindProvider(this.propertiesConfigurerService.getKindProvider())
                 .messageProvider(this.propertiesConfigurerService.getMessageProvider())
                 .build();
+//        return SelectDescription.newSelectDescription("nodestyle.shapeSelector")
+//                .idProvider(variableManager -> "nodestyle.shapeSelector")
+//                .targetObjectIdProvider(this.propertiesConfigurerService.getSemanticTargetIdProvider())
+//                .labelProvider(variableManager -> "Shape")
+//                .valueProvider(variableManager -> variableManager.get(VariableManager.SELF, ImageNodeStyleDescription.class).map(ImageNodeStyleDescription::getShape).orElse(EMPTY))
+//                .optionsProvider(variableManager -> {
+//                    Optional<String> optionalEditingContextId = variableManager.get(IEditingContext.EDITING_CONTEXT, IEditingContext.class).map(IEditingContext::getId);
+//
+//                    Stream<CustomImageMetadata> parametricSVGs = this.parametricSVGImageRegistries.stream()
+//                            .flatMap(service -> service.getImages().stream())
+//                            .map(image -> new CustomImageMetadata(image.getId(), optionalEditingContextId, image.getLabel(), "image/svg+xml"));
+//
+//                    List<CustomImageMetadata> customImages = optionalEditingContextId.map(this.customImageSearchService::getAvailableImages).orElse(List.of());
+//
+//                    return Stream.concat(parametricSVGs, customImages.stream())
+//                            .sorted(Comparator.comparing(CustomImageMetadata::getLabel))
+//                            .toList();
+//                })
+//                .optionIdProvider(variableManager -> variableManager.get(SelectComponent.CANDIDATE_VARIABLE, CustomImageMetadata.class)
+//                        .map(CustomImageMetadata::getId)
+//                        .map(UUID::toString)
+//                        .orElse(EMPTY))
+//                .optionLabelProvider(variableManager -> variableManager.get(SelectComponent.CANDIDATE_VARIABLE, CustomImageMetadata.class)
+//                        .map(CustomImageMetadata::getLabel)
+//                        .orElse(EMPTY))
+//                .optionIconURLProvider(variableManager -> variableManager.get(SelectComponent.CANDIDATE_VARIABLE, Object.class).map(this.objectService::getImagePath)
+//                        .orElse(List.of()))
+//                .newValueHandler(this.getNewShapeValueHandler())
+//                .diagnosticsProvider(this.propertiesConfigurerService.getDiagnosticsProvider(DiagramPackage.Literals.IMAGE_NODE_STYLE_DESCRIPTION__SHAPE))
+//                .kindProvider(this.propertiesConfigurerService.getKindProvider())
+//                .messageProvider(this.propertiesConfigurerService.getMessageProvider())
+//                .build();
     }
 
     private ImageDescription createShapePreviewField() {
@@ -405,7 +418,21 @@ public class NodeStylePropertiesConfigurer implements IPropertiesDescriptionRegi
                     newShape = null;
                 }
                 optionalNodeStyle.get().setShape(newShape);
-                return new Success();
+                return new Success(ChangeKind.SEMANTIC_CHANGE, Map.of());
+            }
+            return new Failure("");
+        };
+    }
+
+    private BiFunction<VariableManager, String, IStatus> getRemoveShapeValueHandler() {
+        return (variableManager, imageToRemove) -> {
+            var optionalNodeStyle = variableManager.get(VariableManager.SELF, ImageNodeStyleDescription.class);
+            if (optionalNodeStyle.isPresent()) {
+                String existingShape = optionalNodeStyle.get().getShape();
+                if (imageToRemove != null && imageToRemove.equals(existingShape)) {
+                    optionalNodeStyle.get().setShape(null);
+                    return new Success(ChangeKind.SEMANTIC_CHANGE, Map.of());
+                }
             }
             return new Failure("");
         };

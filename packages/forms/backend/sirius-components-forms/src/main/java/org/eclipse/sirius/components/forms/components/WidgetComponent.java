@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2019, 2023 Obeo.
+ * Copyright (c) 2019, 2024 Obeo.
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -21,6 +21,7 @@ import org.eclipse.sirius.components.forms.description.ChartWidgetDescription;
 import org.eclipse.sirius.components.forms.description.CheckboxDescription;
 import org.eclipse.sirius.components.forms.description.FlexboxContainerDescription;
 import org.eclipse.sirius.components.forms.description.ImageDescription;
+import org.eclipse.sirius.components.forms.description.ImagePickerDescription;
 import org.eclipse.sirius.components.forms.description.LabelDescription;
 import org.eclipse.sirius.components.forms.description.LinkDescription;
 import org.eclipse.sirius.components.forms.description.ListDescription;
@@ -101,6 +102,9 @@ public class WidgetComponent implements IComponent {
         } else if (widgetDescription instanceof ImageDescription) {
             ImageComponentProps imageComponentProps = new ImageComponentProps(variableManager, (ImageDescription) widgetDescription);
             element = new Element(ImageComponent.class, imageComponentProps);
+        } else if (widgetDescription instanceof ImagePickerDescription) {
+            ImagePickerComponentProps imagePickerComponentProps = new ImagePickerComponentProps(variableManager, (ImagePickerDescription) widgetDescription);
+            element = new Element(ImagePickerComponent.class, imagePickerComponentProps);
         } else if (widgetDescription instanceof RichTextDescription) {
             RichTextComponentProps richTextComponentProps = new RichTextComponentProps(variableManager, (RichTextDescription) widgetDescription);
             element = new Element(RichTextComponent.class, richTextComponentProps);

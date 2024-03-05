@@ -71,7 +71,7 @@ public class RenameFormEventHandler implements IFormEventHandler {
 
         String message = this.messageService.invalidInput(formInput.getClass().getSimpleName(), RenameFormInput.class.getSimpleName());
         IPayload payload = new ErrorPayload(formInput.id(), message);
-        ChangeDescription changeDescription = new ChangeDescription(ChangeKind.NOTHING, formInput.representationId(), formInput);
+        ChangeDescription changeDescription = new ChangeDescription(ChangeKind.SEMANTIC_CHANGE, formInput.representationId(), formInput);
 
         if (formInput instanceof RenameFormInput) {
             RenameFormInput renameRepresentationInput = (RenameFormInput) formInput;

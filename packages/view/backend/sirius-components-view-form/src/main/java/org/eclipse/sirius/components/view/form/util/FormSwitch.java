@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.sirius.components.view.Conditional;
 import org.eclipse.sirius.components.view.LabelStyle;
 import org.eclipse.sirius.components.view.RepresentationDescription;
+import org.eclipse.sirius.components.view.form.AddImageOperation;
 import org.eclipse.sirius.components.view.form.BarChartDescription;
 import org.eclipse.sirius.components.view.form.BarChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ButtonDescription;
@@ -28,6 +29,7 @@ import org.eclipse.sirius.components.view.form.ConditionalBarChartDescriptionSty
 import org.eclipse.sirius.components.view.form.ConditionalButtonDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalCheckboxDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalContainerBorderStyle;
+import org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalLinkDescriptionStyle;
 import org.eclipse.sirius.components.view.form.ConditionalListDescriptionStyle;
@@ -46,6 +48,8 @@ import org.eclipse.sirius.components.view.form.FormElementIf;
 import org.eclipse.sirius.components.view.form.FormPackage;
 import org.eclipse.sirius.components.view.form.GroupDescription;
 import org.eclipse.sirius.components.view.form.ImageDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescription;
+import org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LabelDescription;
 import org.eclipse.sirius.components.view.form.LabelDescriptionStyle;
 import org.eclipse.sirius.components.view.form.LinkDescription;
@@ -59,6 +63,7 @@ import org.eclipse.sirius.components.view.form.PieChartDescription;
 import org.eclipse.sirius.components.view.form.PieChartDescriptionStyle;
 import org.eclipse.sirius.components.view.form.RadioDescription;
 import org.eclipse.sirius.components.view.form.RadioDescriptionStyle;
+import org.eclipse.sirius.components.view.form.RemoveImageOperation;
 import org.eclipse.sirius.components.view.form.RichTextDescription;
 import org.eclipse.sirius.components.view.form.SelectDescription;
 import org.eclipse.sirius.components.view.form.SelectDescriptionStyle;
@@ -211,6 +216,31 @@ public class FormSwitch<T> extends Switch<T> {
                     result = this.caseWidgetDescription(imageDescription);
                 if (result == null)
                     result = this.caseFormElementDescription(imageDescription);
+                if (result == null)
+                    result = this.defaultCase(theEObject);
+                return result;
+            }
+            case FormPackage.IMAGE_PICKER_DESCRIPTION: {
+                ImagePickerDescription imagePickerDescription = (ImagePickerDescription) theEObject;
+                T result = this.caseImagePickerDescription(imagePickerDescription);
+                if (result == null)
+                    result = this.caseWidgetDescription(imagePickerDescription);
+                if (result == null)
+                    result = this.caseFormElementDescription(imagePickerDescription);
+                if (result == null)
+                    result = this.defaultCase(theEObject);
+                return result;
+            }
+            case FormPackage.ADD_IMAGE_OPERATION: {
+                AddImageOperation addImageOperation = (AddImageOperation) theEObject;
+                T result = this.caseAddImageOperation(addImageOperation);
+                if (result == null)
+                    result = this.defaultCase(theEObject);
+                return result;
+            }
+            case FormPackage.REMOVE_IMAGE_OPERATION: {
+                RemoveImageOperation removeImageOperation = (RemoveImageOperation) theEObject;
+                T result = this.caseRemoveImageOperation(removeImageOperation);
                 if (result == null)
                     result = this.defaultCase(theEObject);
                 return result;
@@ -413,6 +443,32 @@ public class FormSwitch<T> extends Switch<T> {
                     result = this.caseCheckboxDescriptionStyle(conditionalCheckboxDescriptionStyle);
                 if (result == null)
                     result = this.caseWidgetDescriptionStyle(conditionalCheckboxDescriptionStyle);
+                if (result == null)
+                    result = this.defaultCase(theEObject);
+                return result;
+            }
+            case FormPackage.IMAGE_PICKER_DESCRIPTION_STYLE: {
+                ImagePickerDescriptionStyle imagePickerDescriptionStyle = (ImagePickerDescriptionStyle) theEObject;
+                T result = this.caseImagePickerDescriptionStyle(imagePickerDescriptionStyle);
+                if (result == null)
+                    result = this.caseWidgetDescriptionStyle(imagePickerDescriptionStyle);
+                if (result == null)
+                    result = this.caseLabelStyle(imagePickerDescriptionStyle);
+                if (result == null)
+                    result = this.defaultCase(theEObject);
+                return result;
+            }
+            case FormPackage.CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE: {
+                ConditionalImagePickerDescriptionStyle conditionalImagePickerDescriptionStyle = (ConditionalImagePickerDescriptionStyle) theEObject;
+                T result = this.caseConditionalImagePickerDescriptionStyle(conditionalImagePickerDescriptionStyle);
+                if (result == null)
+                    result = this.caseConditional(conditionalImagePickerDescriptionStyle);
+                if (result == null)
+                    result = this.caseImagePickerDescriptionStyle(conditionalImagePickerDescriptionStyle);
+                if (result == null)
+                    result = this.caseWidgetDescriptionStyle(conditionalImagePickerDescriptionStyle);
+                if (result == null)
+                    result = this.caseLabelStyle(conditionalImagePickerDescriptionStyle);
                 if (result == null)
                     result = this.defaultCase(theEObject);
                 return result;
@@ -842,6 +898,51 @@ public class FormSwitch<T> extends Switch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Image Picker Description</em>'. <!--
+     * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Image Picker Description</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseImagePickerDescription(ImagePickerDescription object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Add Image Operation</em>'. <!--
+     * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Add Image Operation</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAddImageOperation(AddImageOperation object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Remove Image Operation</em>'. <!--
+     * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Remove Image Operation</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseRemoveImageOperation(RemoveImageOperation object) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Label Description</em>'. <!-- begin-user-doc
      * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
      * -->
@@ -1110,6 +1211,37 @@ public class FormSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseConditionalCheckboxDescriptionStyle(ConditionalCheckboxDescriptionStyle object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Image Picker Description Style</em>'. <!--
+     * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Image Picker Description Style</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseImagePickerDescriptionStyle(ImagePickerDescriptionStyle object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Conditional Image Picker Description
+     * Style</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate
+     * the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Conditional Image Picker Description
+     *         Style</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseConditionalImagePickerDescriptionStyle(ConditionalImagePickerDescriptionStyle object) {
         return null;
     }
 

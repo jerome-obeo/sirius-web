@@ -11,7 +11,7 @@
  *     Obeo - initial API and implementation
  *******************************************************************************/
 import { gql } from '@apollo/client';
-import { ServerContext, ServerContextValue, Toast } from '@eclipse-sirius/sirius-components-core';
+import { ServerContext, ServerContextValue, Toast, FileUpload, sendFile } from '@eclipse-sirius/sirius-components-core';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -22,8 +22,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useMachine } from '@xstate/react';
 
 import { useContext, useEffect } from 'react';
-import { FileUpload } from '../../core/file-upload/FileUpload';
-import { sendFile } from '../../core/sendFile';
 import { GQLErrorPayload, GQLUploadDocumentPayload, UploadDocumentModalProps } from './UploadDocumentModal.types';
 import {
   HandleResponseEvent,

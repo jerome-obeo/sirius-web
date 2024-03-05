@@ -33,6 +33,7 @@ import org.eclipse.sirius.components.forms.FlexboxContainer;
 import org.eclipse.sirius.components.forms.Form;
 import org.eclipse.sirius.components.forms.Group;
 import org.eclipse.sirius.components.forms.Image;
+import org.eclipse.sirius.components.forms.ImagePicker;
 import org.eclipse.sirius.components.forms.LabelWidget;
 import org.eclipse.sirius.components.forms.Link;
 import org.eclipse.sirius.components.forms.MultiSelect;
@@ -51,6 +52,7 @@ import org.eclipse.sirius.components.forms.elements.FlexboxContainerElementProps
 import org.eclipse.sirius.components.forms.elements.FormElementProps;
 import org.eclipse.sirius.components.forms.elements.GroupElementProps;
 import org.eclipse.sirius.components.forms.elements.ImageElementProps;
+import org.eclipse.sirius.components.forms.elements.ImagePickerElementProps;
 import org.eclipse.sirius.components.forms.elements.LabelWidgetElementProps;
 import org.eclipse.sirius.components.forms.elements.LinkElementProps;
 import org.eclipse.sirius.components.forms.elements.ListElementProps;
@@ -124,6 +126,8 @@ public class FormElementFactory implements IElementFactory {
             object = this.instantiateTree((TreeElementProps) props, children);
         } else if (ImageElementProps.TYPE.equals(type) && props instanceof ImageElementProps) {
             object = this.instantiateImage((ImageElementProps) props, children);
+        } else if (ImagePickerElementProps.TYPE.equals(type) && props instanceof ImagePickerElementProps) {
+            object = this.instantiateImagePicker((ImagePickerElementProps) props, children);
         } else if (RichTextElementProps.TYPE.equals(type) && props instanceof RichTextElementProps) {
             object = this.instantiateRichText((RichTextElementProps) props, children);
         } else if (ToolbarActionElementProps.TYPE.equals(type) && props instanceof ToolbarActionElementProps) {
@@ -142,14 +146,12 @@ public class FormElementFactory implements IElementFactory {
 
     private Object instantiateBarChart(BarChartElementProps props) {
         List<BarChartEntry> entries = this.getBarChartEntries(props);
-        // @formatter:off
         Builder builder = BarChart.newBarChart(props.getId())
                 .descriptionId(props.getDescriptionId())
                 .label(props.getLabel())
                 .width(props.getWidth())
                 .height(props.getHeight())
                 .entries(entries);
-        // @formatter:on
 
         if (props.getStyle() != null) {
             builder.style(props.getStyle());
@@ -160,12 +162,10 @@ public class FormElementFactory implements IElementFactory {
 
     private Object instantiatePieChart(PieChartElementProps props) {
         List<PieChartEntry> entries = this.getPieChartEntries(props);
-        // @formatter:off
         org.eclipse.sirius.components.charts.piechart.PieChart.Builder builder = PieChart.newPieChart(props.getId())
                 .descriptionId(props.getDescriptionId())
                 .label(props.getLabel())
                 .entries(entries);
-        // @formatter:on
 
         if (props.getStyle() != null) {
             builder.style(props.getStyle());
@@ -199,7 +199,6 @@ public class FormElementFactory implements IElementFactory {
     }
 
     private Form instantiateForm(FormElementProps props, List<Object> children) {
-        // @formatter:off
         List<Page> pages = children.stream()
                 .filter(Page.class::isInstance)
                 .map(Page.class::cast)
@@ -211,7 +210,6 @@ public class FormElementFactory implements IElementFactory {
                 .descriptionId(props.getDescriptionId())
                 .pages(pages)
                 .build();
-        // @formatter:on
     }
 
     private Page instantiatePage(PageElementProps props, List<Object> children) {
@@ -255,7 +253,6 @@ public class FormElementFactory implements IElementFactory {
     private Checkbox instantiateCheckbox(CheckboxElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Checkbox.Builder checkboxBuilder = Checkbox.newCheckbox(props.getId())
                 .label(props.getLabel())
                 .value(props.isValue())
@@ -273,19 +270,16 @@ public class FormElementFactory implements IElementFactory {
             checkboxBuilder.helpTextProvider(props.getHelpTextProvider());
         }
         return checkboxBuilder.build();
-        // @formatter:on
     }
 
     private org.eclipse.sirius.components.forms.List instantiateList(ListElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         org.eclipse.sirius.components.forms.List.Builder listBuilder = org.eclipse.sirius.components.forms.List.newList(props.getId())
                 .label(props.getLabel())
                 .items(props.getItems())
                 .diagnostics(diagnostics)
                 .readOnly(props.isReadOnly());
-        // @formatter:on
         if (props.getIconURL() != null) {
             listBuilder.iconURL(props.getIconURL());
         }
@@ -301,7 +295,6 @@ public class FormElementFactory implements IElementFactory {
     private Radio instantiateRadio(RadioElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Radio.Builder radioBuilder = Radio.newRadio(props.getId())
                 .label(props.getLabel())
                 .options(props.getOptions())
@@ -320,13 +313,11 @@ public class FormElementFactory implements IElementFactory {
         }
 
         return radioBuilder.build();
-        // @formatter:on
     }
 
     private Select instantiateSelect(SelectElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Select.Builder selectBuilder = Select.newSelect(props.getId())
                 .label(props.getLabel())
                 .options(props.getOptions())
@@ -345,13 +336,11 @@ public class FormElementFactory implements IElementFactory {
             selectBuilder.helpTextProvider(props.getHelpTextProvider());
         }
         return selectBuilder.build();
-        // @formatter:on
     }
 
     private MultiSelect instantiateMultiSelect(MultiSelectElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         MultiSelect.Builder multiSelectBuilder = MultiSelect.newMultiSelect(props.getId())
                 .label(props.getLabel())
                 .options(props.getOptions())
@@ -370,13 +359,11 @@ public class FormElementFactory implements IElementFactory {
             multiSelectBuilder.helpTextProvider(props.getHelpTextProvider());
         }
         return multiSelectBuilder.build();
-        // @formatter:on
     }
 
     private Textarea instantiateTextarea(TextareaElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Textarea.Builder textareaBuilder = Textarea.newTextarea(props.getId())
                 .label(props.getLabel())
                 .value(props.getValue())
@@ -397,20 +384,17 @@ public class FormElementFactory implements IElementFactory {
             textareaBuilder.helpTextProvider(props.getHelpTextProvider());
         }
         return textareaBuilder.build();
-        // @formatter:on
     }
 
     private Textfield instantiateTextfield(TextfieldElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Textfield.Builder textfieldBuilder = Textfield.newTextfield(props.getId())
                 .label(props.getLabel())
                 .value(props.getValue())
                 .newValueHandler(props.getNewValueHandler())
                 .diagnostics(diagnostics)
                 .readOnly(props.isReadOnly());
-        // @formatter:on
 
         if (props.getCompletionProposalsProvider() != null) {
             textfieldBuilder.completionProposalsProvider(props.getCompletionProposalsProvider());
@@ -428,23 +412,19 @@ public class FormElementFactory implements IElementFactory {
     }
 
     private Object instantiateDiagnostic(DiagnosticElementProps props, List<Object> children) {
-        // @formatter:off
         return Diagnostic.newDiagnostic(props.getId())
                 .kind(props.getKind())
                 .message(props.getMessage())
                 .build();
-        // @formatter:on
     }
 
     private Link instantiateLink(LinkElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Link.Builder linkbuilder = Link.newLink(props.getId())
                 .label(props.getLabel())
                 .url(props.getUrl())
                 .diagnostics(diagnostics);
-        // @formatter:on
 
         if (props.getStyle() != null) {
             linkbuilder.style(props.getStyle());
@@ -461,13 +441,11 @@ public class FormElementFactory implements IElementFactory {
     private Button instantiateButton(ButtonElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Button.Builder buttonBuilder = Button.newButton(props.getId())
                 .label(props.getLabel())
                 .pushButtonHandler(props.getPushButtonHandler())
                 .diagnostics(diagnostics)
                 .readOnly(props.isReadOnly());
-        // @formatter:on
         if (props.getIconURL() != null) {
             buttonBuilder.iconURL(props.getIconURL());
         }
@@ -489,12 +467,10 @@ public class FormElementFactory implements IElementFactory {
     private ToolbarAction instantiateToolbarAction(ToolbarActionElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         ToolbarAction.Builder buttonBuilder = ToolbarAction.newToolbarAction(props.getId())
                 .label(props.getLabel())
                 .pushButtonHandler(props.getPushButtonHandler())
                 .diagnostics(diagnostics);
-        // @formatter:on
         if (props.getIconURL() != null) {
             buttonBuilder.iconURL(props.getIconURL());
         }
@@ -518,7 +494,6 @@ public class FormElementFactory implements IElementFactory {
     private LabelWidget instantiateLabel(LabelWidgetElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         LabelWidget.Builder labelBuilder = LabelWidget.newLabelWidget(props.getId())
                 .label(props.getLabel())
                 .value(props.getValue())
@@ -531,12 +506,10 @@ public class FormElementFactory implements IElementFactory {
             labelBuilder.helpTextProvider(props.getHelpTextProvider());
         }
         return labelBuilder.build();
-        // @formatter:on
     }
 
     private Object instantiateChartWidget(ChartWidgetElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
-        // @formatter:off
         var chart = children.stream()
                 .filter(IChart.class::isInstance)
                 .map(IChart.class::cast)
@@ -547,7 +520,6 @@ public class FormElementFactory implements IElementFactory {
                 .label(props.getLabel())
                 .chart(chart)
                 .diagnostics(diagnostics);
-        // @formatter:on
         if (props.getIconURL() != null) {
             chartBuilder.iconURL(props.getIconURL());
         }
@@ -588,7 +560,6 @@ public class FormElementFactory implements IElementFactory {
     private TreeWidget instantiateTree(TreeElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         TreeWidget.Builder builder = TreeWidget.newTreeWidget(props.getId())
                 .label(props.getLabel())
                 .iconURL(props.getIconURL())
@@ -596,7 +567,6 @@ public class FormElementFactory implements IElementFactory {
                 .expandedNodesIds(props.getExpandedNodesIds())
                 .readOnly(props.isReadOnly())
                 .diagnostics(diagnostics);
-        // @formatter:on
         if (props.getHelpTextProvider() != null) {
             builder.helpTextProvider(props.getHelpTextProvider());
         }
@@ -606,12 +576,10 @@ public class FormElementFactory implements IElementFactory {
     private Image instantiateImage(ImageElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         Image.Builder imagebuilder = Image.newImage(props.getId())
                 .label(props.getLabel())
                 .url(props.getUrl())
                 .diagnostics(diagnostics);
-        // @formatter:on
 
         if (props.getIconURL() != null) {
             imagebuilder.iconURL(props.getIconURL());
@@ -625,10 +593,29 @@ public class FormElementFactory implements IElementFactory {
         return imagebuilder.build();
     }
 
+    private ImagePicker instantiateImagePicker(ImagePickerElementProps props, List<Object> children) {
+        List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
+
+        ImagePicker.Builder imagePickerbuilder = ImagePicker.newImagePicker(props.getId())
+                .label(props.getLabel())
+                .images(props.getImages())
+                .newValueHandler(props.getNewValueHandler())
+                .removeValueHandler(props.getRemoveValueHandler())
+                .readOnly(props.isReadOnly())
+                .diagnostics(diagnostics);
+
+        if (props.getIconURL() != null) {
+            imagePickerbuilder.iconURL(props.getIconURL());
+        }
+        if (props.getHelpTextProvider() != null) {
+            imagePickerbuilder.helpTextProvider(props.getHelpTextProvider());
+        }
+        return imagePickerbuilder.build();
+    }
+
     private RichText instantiateRichText(RichTextElementProps props, List<Object> children) {
         List<Diagnostic> diagnostics = this.getDiagnosticsFromChildren(children);
 
-        // @formatter:off
         RichText.Builder builder = RichText.newRichText(props.getId())
                 .label(props.getLabel())
                 .value(props.getValue())
@@ -642,16 +629,13 @@ public class FormElementFactory implements IElementFactory {
             builder.helpTextProvider(props.getHelpTextProvider());
         }
         return builder.build();
-        // @formatter:on
     }
 
     private List<Diagnostic> getDiagnosticsFromChildren(List<Object> children) {
-        // @formatter:off
         return children.stream()
                 .filter(Diagnostic.class::isInstance)
                 .map(Diagnostic.class::cast)
                 .toList();
-        // @formatter:on
     }
 
 }

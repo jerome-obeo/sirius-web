@@ -892,6 +892,187 @@ public interface FormPackage extends EPackage {
     int IMAGE_DESCRIPTION_OPERATION_COUNT = WIDGET_DESCRIPTION_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionImpl
+     * <em>Image Picker Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionImpl
+     * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getImagePickerDescription()
+     * @generated
+     */
+    int IMAGE_PICKER_DESCRIPTION = 10;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__NAME = WIDGET_DESCRIPTION__NAME;
+
+    /**
+     * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__LABEL_EXPRESSION = WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+    /**
+     * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__HELP_EXPRESSION = WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+    /**
+     * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__VALUE_EXPRESSION = WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Is Enabled Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__IS_ENABLED_EXPRESSION = WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Add Image Operation</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__ADD_IMAGE_OPERATION = WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Remove Image Operation</b></em>' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__REMOVE_IMAGE_OPERATION = WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__STYLE = WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION__CONDITIONAL_STYLES = WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
+
+    /**
+     * The number of structural features of the '<em>Image Picker Description</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_FEATURE_COUNT = WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
+
+    /**
+     * The number of operations of the '<em>Image Picker Description</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_OPERATION_COUNT = WIDGET_DESCRIPTION_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.eclipse.sirius.components.view.form.impl.AddImageOperationImpl <em>Add
+     * Image Operation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see org.eclipse.sirius.components.view.form.impl.AddImageOperationImpl
+     * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getAddImageOperation()
+     * @generated
+     */
+    int ADD_IMAGE_OPERATION = 11;
+
+    /**
+     * The feature id for the '<em><b>Body</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int ADD_IMAGE_OPERATION__BODY = 0;
+
+    /**
+     * The number of structural features of the '<em>Add Image Operation</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int ADD_IMAGE_OPERATION_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Add Image Operation</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     * @ordered
+     */
+    int ADD_IMAGE_OPERATION_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link org.eclipse.sirius.components.view.form.impl.RemoveImageOperationImpl
+     * <em>Remove Image Operation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see org.eclipse.sirius.components.view.form.impl.RemoveImageOperationImpl
+     * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getRemoveImageOperation()
+     * @generated
+     */
+    int REMOVE_IMAGE_OPERATION = 12;
+
+    /**
+     * The feature id for the '<em><b>Body</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int REMOVE_IMAGE_OPERATION__BODY = 0;
+
+    /**
+     * The number of structural features of the '<em>Remove Image Operation</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int REMOVE_IMAGE_OPERATION_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Remove Image Operation</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int REMOVE_IMAGE_OPERATION_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link org.eclipse.sirius.components.view.form.impl.LabelDescriptionImpl <em>Label
      * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -899,7 +1080,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getLabelDescription()
      * @generated
      */
-    int LABEL_DESCRIPTION = 10;
+    int LABEL_DESCRIPTION = 13;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -978,7 +1159,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getLinkDescription()
      * @generated
      */
-    int LINK_DESCRIPTION = 11;
+    int LINK_DESCRIPTION = 14;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1057,7 +1238,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getListDescription()
      * @generated
      */
-    int LIST_DESCRIPTION = 12;
+    int LIST_DESCRIPTION = 15;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1172,7 +1353,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getMultiSelectDescription()
      * @generated
      */
-    int MULTI_SELECT_DESCRIPTION = 13;
+    int MULTI_SELECT_DESCRIPTION = 16;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1288,7 +1469,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getTreeDescription()
      * @generated
      */
-    int TREE_DESCRIPTION = 14;
+    int TREE_DESCRIPTION = 17;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1421,7 +1602,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getPieChartDescription()
      * @generated
      */
-    int PIE_CHART_DESCRIPTION = 15;
+    int PIE_CHART_DESCRIPTION = 18;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1509,7 +1690,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getRadioDescription()
      * @generated
      */
-    int RADIO_DESCRIPTION = 16;
+    int RADIO_DESCRIPTION = 19;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1624,7 +1805,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getRichTextDescription()
      * @generated
      */
-    int RICH_TEXT_DESCRIPTION = 17;
+    int RICH_TEXT_DESCRIPTION = 20;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1704,7 +1885,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getSelectDescription()
      * @generated
      */
-    int SELECT_DESCRIPTION = 18;
+    int SELECT_DESCRIPTION = 21;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1820,7 +2001,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getTextAreaDescription()
      * @generated
      */
-    int TEXT_AREA_DESCRIPTION = 19;
+    int TEXT_AREA_DESCRIPTION = 22;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1918,7 +2099,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getTextfieldDescription()
      * @generated
      */
-    int TEXTFIELD_DESCRIPTION = 20;
+    int TEXTFIELD_DESCRIPTION = 23;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2016,7 +2197,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getWidgetDescriptionStyle()
      * @generated
      */
-    int WIDGET_DESCRIPTION_STYLE = 21;
+    int WIDGET_DESCRIPTION_STYLE = 24;
 
     /**
      * The number of structural features of the '<em>Widget Description Style</em>' class. <!-- begin-user-doc --> <!--
@@ -2044,7 +2225,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getBarChartDescriptionStyle()
      * @generated
      */
-    int BAR_CHART_DESCRIPTION_STYLE = 22;
+    int BAR_CHART_DESCRIPTION_STYLE = 25;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2121,7 +2302,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalBarChartDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_BAR_CHART_DESCRIPTION_STYLE = 23;
+    int CONDITIONAL_BAR_CHART_DESCRIPTION_STYLE = 26;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2205,7 +2386,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getButtonDescriptionStyle()
      * @generated
      */
-    int BUTTON_DESCRIPTION_STYLE = 24;
+    int BUTTON_DESCRIPTION_STYLE = 27;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2292,7 +2473,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalButtonDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_BUTTON_DESCRIPTION_STYLE = 25;
+    int CONDITIONAL_BUTTON_DESCRIPTION_STYLE = 28;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2386,7 +2567,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getCheckboxDescriptionStyle()
      * @generated
      */
-    int CHECKBOX_DESCRIPTION_STYLE = 26;
+    int CHECKBOX_DESCRIPTION_STYLE = 29;
 
     /**
      * The feature id for the '<em><b>Color</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2431,7 +2612,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalCheckboxDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_CHECKBOX_DESCRIPTION_STYLE = 27;
+    int CONDITIONAL_CHECKBOX_DESCRIPTION_STYLE = 30;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2476,6 +2657,167 @@ public interface FormPackage extends EPackage {
     int CONDITIONAL_CHECKBOX_DESCRIPTION_STYLE_OPERATION_COUNT = ViewPackage.CONDITIONAL_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionStyleImpl
+     * <em>Image Picker Description Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionStyleImpl
+     * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getImagePickerDescriptionStyle()
+     * @generated
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE = 31;
+
+    /**
+     * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE__FONT_SIZE = WIDGET_DESCRIPTION_STYLE_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Italic</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE__ITALIC = WIDGET_DESCRIPTION_STYLE_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Bold</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE__BOLD = WIDGET_DESCRIPTION_STYLE_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Underline</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE__UNDERLINE = WIDGET_DESCRIPTION_STYLE_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Strike Through</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE__STRIKE_THROUGH = WIDGET_DESCRIPTION_STYLE_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Color</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE__COLOR = WIDGET_DESCRIPTION_STYLE_FEATURE_COUNT + 5;
+
+    /**
+     * The number of structural features of the '<em>Image Picker Description Style</em>' class. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE_FEATURE_COUNT = WIDGET_DESCRIPTION_STYLE_FEATURE_COUNT + 6;
+
+    /**
+     * The number of operations of the '<em>Image Picker Description Style</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int IMAGE_PICKER_DESCRIPTION_STYLE_OPERATION_COUNT = WIDGET_DESCRIPTION_STYLE_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the
+     * '{@link org.eclipse.sirius.components.view.form.impl.ConditionalImagePickerDescriptionStyleImpl <em>Conditional
+     * Image Picker Description Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see org.eclipse.sirius.components.view.form.impl.ConditionalImagePickerDescriptionStyleImpl
+     * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalImagePickerDescriptionStyle()
+     * @generated
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE = 32;
+
+    /**
+     * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE__CONDITION = ViewPackage.CONDITIONAL__CONDITION;
+
+    /**
+     * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE__FONT_SIZE = ViewPackage.CONDITIONAL_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Italic</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE__ITALIC = ViewPackage.CONDITIONAL_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Bold</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE__BOLD = ViewPackage.CONDITIONAL_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Underline</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE__UNDERLINE = ViewPackage.CONDITIONAL_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Strike Through</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE__STRIKE_THROUGH = ViewPackage.CONDITIONAL_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Color</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE__COLOR = ViewPackage.CONDITIONAL_FEATURE_COUNT + 5;
+
+    /**
+     * The number of structural features of the '<em>Conditional Image Picker Description Style</em>' class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE_FEATURE_COUNT = ViewPackage.CONDITIONAL_FEATURE_COUNT + 6;
+
+    /**
+     * The number of operations of the '<em>Conditional Image Picker Description Style</em>' class. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE_OPERATION_COUNT = ViewPackage.CONDITIONAL_OPERATION_COUNT + 0;
+
+    /**
      * The meta object id for the '{@link org.eclipse.sirius.components.view.form.impl.LabelDescriptionStyleImpl
      * <em>Label Description Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -2483,7 +2825,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getLabelDescriptionStyle()
      * @generated
      */
-    int LABEL_DESCRIPTION_STYLE = 28;
+    int LABEL_DESCRIPTION_STYLE = 33;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2560,7 +2902,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalLabelDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_LABEL_DESCRIPTION_STYLE = 29;
+    int CONDITIONAL_LABEL_DESCRIPTION_STYLE = 34;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2644,7 +2986,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getLinkDescriptionStyle()
      * @generated
      */
-    int LINK_DESCRIPTION_STYLE = 30;
+    int LINK_DESCRIPTION_STYLE = 35;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2721,7 +3063,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalLinkDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_LINK_DESCRIPTION_STYLE = 31;
+    int CONDITIONAL_LINK_DESCRIPTION_STYLE = 36;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2805,7 +3147,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getListDescriptionStyle()
      * @generated
      */
-    int LIST_DESCRIPTION_STYLE = 32;
+    int LIST_DESCRIPTION_STYLE = 37;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2882,7 +3224,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalListDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_LIST_DESCRIPTION_STYLE = 33;
+    int CONDITIONAL_LIST_DESCRIPTION_STYLE = 38;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2966,7 +3308,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getMultiSelectDescriptionStyle()
      * @generated
      */
-    int MULTI_SELECT_DESCRIPTION_STYLE = 34;
+    int MULTI_SELECT_DESCRIPTION_STYLE = 39;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3061,7 +3403,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalMultiSelectDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_MULTI_SELECT_DESCRIPTION_STYLE = 35;
+    int CONDITIONAL_MULTI_SELECT_DESCRIPTION_STYLE = 40;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3163,7 +3505,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getPieChartDescriptionStyle()
      * @generated
      */
-    int PIE_CHART_DESCRIPTION_STYLE = 36;
+    int PIE_CHART_DESCRIPTION_STYLE = 41;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3256,7 +3598,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalPieChartDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_PIE_CHART_DESCRIPTION_STYLE = 37;
+    int CONDITIONAL_PIE_CHART_DESCRIPTION_STYLE = 42;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3356,7 +3698,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getRadioDescriptionStyle()
      * @generated
      */
-    int RADIO_DESCRIPTION_STYLE = 38;
+    int RADIO_DESCRIPTION_STYLE = 43;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3433,7 +3775,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalRadioDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_RADIO_DESCRIPTION_STYLE = 39;
+    int CONDITIONAL_RADIO_DESCRIPTION_STYLE = 44;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3517,7 +3859,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getSelectDescriptionStyle()
      * @generated
      */
-    int SELECT_DESCRIPTION_STYLE = 40;
+    int SELECT_DESCRIPTION_STYLE = 45;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3612,7 +3954,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalSelectDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_SELECT_DESCRIPTION_STYLE = 41;
+    int CONDITIONAL_SELECT_DESCRIPTION_STYLE = 46;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3714,7 +4056,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getTextareaDescriptionStyle()
      * @generated
      */
-    int TEXTAREA_DESCRIPTION_STYLE = 42;
+    int TEXTAREA_DESCRIPTION_STYLE = 47;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3801,7 +4143,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalTextareaDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_TEXTAREA_DESCRIPTION_STYLE = 43;
+    int CONDITIONAL_TEXTAREA_DESCRIPTION_STYLE = 48;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3895,7 +4237,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getTextfieldDescriptionStyle()
      * @generated
      */
-    int TEXTFIELD_DESCRIPTION_STYLE = 44;
+    int TEXTFIELD_DESCRIPTION_STYLE = 49;
 
     /**
      * The feature id for the '<em><b>Font Size</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3982,7 +4324,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalTextfieldDescriptionStyle()
      * @generated
      */
-    int CONDITIONAL_TEXTFIELD_DESCRIPTION_STYLE = 45;
+    int CONDITIONAL_TEXTFIELD_DESCRIPTION_STYLE = 50;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -4076,7 +4418,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getContainerBorderStyle()
      * @generated
      */
-    int CONTAINER_BORDER_STYLE = 46;
+    int CONTAINER_BORDER_STYLE = 51;
 
     /**
      * The feature id for the '<em><b>Border Color</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -4138,7 +4480,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalContainerBorderStyle()
      * @generated
      */
-    int CONDITIONAL_CONTAINER_BORDER_STYLE = 47;
+    int CONDITIONAL_CONTAINER_BORDER_STYLE = 52;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -4207,7 +4549,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getFormElementFor()
      * @generated
      */
-    int FORM_ELEMENT_FOR = 48;
+    int FORM_ELEMENT_FOR = 53;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -4268,7 +4610,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getFormElementIf()
      * @generated
      */
-    int FORM_ELEMENT_IF = 49;
+    int FORM_ELEMENT_IF = 54;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -4321,7 +4663,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getFlexDirection()
      * @generated
      */
-    int FLEX_DIRECTION = 50;
+    int FLEX_DIRECTION = 55;
 
     /**
      * The meta object id for the '{@link org.eclipse.sirius.components.view.form.GroupDisplayMode <em>Group Display
@@ -4331,7 +4673,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getGroupDisplayMode()
      * @generated
      */
-    int GROUP_DISPLAY_MODE = 51;
+    int GROUP_DISPLAY_MODE = 56;
 
     /**
      * The meta object id for the '{@link org.eclipse.sirius.components.view.form.LabelPlacement <em>Label
@@ -4341,7 +4683,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getLabelPlacement()
      * @generated
      */
-    int LABEL_PLACEMENT = 52;
+    int LABEL_PLACEMENT = 57;
 
     /**
      * The meta object id for the '{@link org.eclipse.sirius.components.view.form.ContainerBorderLineStyle <em>Container
@@ -4351,7 +4693,7 @@ public interface FormPackage extends EPackage {
      * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getContainerBorderLineStyle()
      * @generated
      */
-    int CONTAINER_BORDER_LINE_STYLE = 53;
+    int CONTAINER_BORDER_LINE_STYLE = 58;
 
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.components.view.form.FormDescription
@@ -4979,6 +5321,132 @@ public interface FormPackage extends EPackage {
      * @generated
      */
     EAttribute getImageDescription_MaxWidthExpression();
+
+    /**
+     * Returns the meta object for class '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription
+     * <em>Image Picker Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Image Picker Description</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription
+     * @generated
+     */
+    EClass getImagePickerDescription();
+
+    /**
+     * Returns the meta object for the attribute
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription#getValueExpression <em>Value
+     * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Value Expression</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription#getValueExpression()
+     * @see #getImagePickerDescription()
+     * @generated
+     */
+    EAttribute getImagePickerDescription_ValueExpression();
+
+    /**
+     * Returns the meta object for the attribute
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription#getIsEnabledExpression <em>Is Enabled
+     * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Is Enabled Expression</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription#getIsEnabledExpression()
+     * @see #getImagePickerDescription()
+     * @generated
+     */
+    EAttribute getImagePickerDescription_IsEnabledExpression();
+
+    /**
+     * Returns the meta object for the reference
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription#getAddImageOperation <em>Add Image
+     * Operation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Add Image Operation</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription#getAddImageOperation()
+     * @see #getImagePickerDescription()
+     * @generated
+     */
+    EReference getImagePickerDescription_AddImageOperation();
+
+    /**
+     * Returns the meta object for the reference
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription#getRemoveImageOperation <em>Remove Image
+     * Operation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Remove Image Operation</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription#getRemoveImageOperation()
+     * @see #getImagePickerDescription()
+     * @generated
+     */
+    EReference getImagePickerDescription_RemoveImageOperation();
+
+    /**
+     * Returns the meta object for the containment reference
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription#getStyle <em>Style</em>}'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the containment reference '<em>Style</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription#getStyle()
+     * @see #getImagePickerDescription()
+     * @generated
+     */
+    EReference getImagePickerDescription_Style();
+
+    /**
+     * Returns the meta object for the containment reference list
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescription#getConditionalStyles <em>Conditional
+     * Styles</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescription#getConditionalStyles()
+     * @see #getImagePickerDescription()
+     * @generated
+     */
+    EReference getImagePickerDescription_ConditionalStyles();
+
+    /**
+     * Returns the meta object for class '{@link org.eclipse.sirius.components.view.form.AddImageOperation <em>Add Image
+     * Operation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Add Image Operation</em>'.
+     * @see org.eclipse.sirius.components.view.form.AddImageOperation
+     * @generated
+     */
+    EClass getAddImageOperation();
+
+    /**
+     * Returns the meta object for the containment reference list
+     * '{@link org.eclipse.sirius.components.view.form.AddImageOperation#getBody <em>Body</em>}'. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the containment reference list '<em>Body</em>'.
+     * @see org.eclipse.sirius.components.view.form.AddImageOperation#getBody()
+     * @see #getAddImageOperation()
+     * @generated
+     */
+    EReference getAddImageOperation_Body();
+
+    /**
+     * Returns the meta object for class '{@link org.eclipse.sirius.components.view.form.RemoveImageOperation <em>Remove
+     * Image Operation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Remove Image Operation</em>'.
+     * @see org.eclipse.sirius.components.view.form.RemoveImageOperation
+     * @generated
+     */
+    EClass getRemoveImageOperation();
+
+    /**
+     * Returns the meta object for the containment reference list
+     * '{@link org.eclipse.sirius.components.view.form.RemoveImageOperation#getBody <em>Body</em>}'. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the containment reference list '<em>Body</em>'.
+     * @see org.eclipse.sirius.components.view.form.RemoveImageOperation#getBody()
+     * @see #getRemoveImageOperation()
+     * @generated
+     */
+    EReference getRemoveImageOperation_Body();
 
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.components.view.form.LabelDescription <em>Label
@@ -5942,6 +6410,39 @@ public interface FormPackage extends EPackage {
      * @generated
      */
     EClass getConditionalCheckboxDescriptionStyle();
+
+    /**
+     * Returns the meta object for class '{@link org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle
+     * <em>Image Picker Description Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Image Picker Description Style</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle
+     * @generated
+     */
+    EClass getImagePickerDescriptionStyle();
+
+    /**
+     * Returns the meta object for the reference
+     * '{@link org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle#getColor <em>Color</em>}'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Color</em>'.
+     * @see org.eclipse.sirius.components.view.form.ImagePickerDescriptionStyle#getColor()
+     * @see #getImagePickerDescriptionStyle()
+     * @generated
+     */
+    EReference getImagePickerDescriptionStyle_Color();
+
+    /**
+     * Returns the meta object for class
+     * '{@link org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle <em>Conditional Image
+     * Picker Description Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Conditional Image Picker Description Style</em>'.
+     * @see org.eclipse.sirius.components.view.form.ConditionalImagePickerDescriptionStyle
+     * @generated
+     */
+    EClass getConditionalImagePickerDescriptionStyle();
 
     /**
      * Returns the meta object for class '{@link org.eclipse.sirius.components.view.form.LabelDescriptionStyle <em>Label
@@ -6999,6 +7500,101 @@ public interface FormPackage extends EPackage {
         EAttribute IMAGE_DESCRIPTION__MAX_WIDTH_EXPRESSION = eINSTANCE.getImageDescription_MaxWidthExpression();
 
         /**
+         * The meta object literal for the
+         * '{@link org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionImpl <em>Image Picker
+         * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionImpl
+         * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getImagePickerDescription()
+         * @generated
+         */
+        EClass IMAGE_PICKER_DESCRIPTION = eINSTANCE.getImagePickerDescription();
+
+        /**
+         * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute IMAGE_PICKER_DESCRIPTION__VALUE_EXPRESSION = eINSTANCE.getImagePickerDescription_ValueExpression();
+
+        /**
+         * The meta object literal for the '<em><b>Is Enabled Expression</b></em>' attribute feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute IMAGE_PICKER_DESCRIPTION__IS_ENABLED_EXPRESSION = eINSTANCE.getImagePickerDescription_IsEnabledExpression();
+
+        /**
+         * The meta object literal for the '<em><b>Add Image Operation</b></em>' reference feature. <!-- begin-user-doc
+         * --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference IMAGE_PICKER_DESCRIPTION__ADD_IMAGE_OPERATION = eINSTANCE.getImagePickerDescription_AddImageOperation();
+
+        /**
+         * The meta object literal for the '<em><b>Remove Image Operation</b></em>' reference feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference IMAGE_PICKER_DESCRIPTION__REMOVE_IMAGE_OPERATION = eINSTANCE.getImagePickerDescription_RemoveImageOperation();
+
+        /**
+         * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+         * --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference IMAGE_PICKER_DESCRIPTION__STYLE = eINSTANCE.getImagePickerDescription_Style();
+
+        /**
+         * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference IMAGE_PICKER_DESCRIPTION__CONDITIONAL_STYLES = eINSTANCE.getImagePickerDescription_ConditionalStyles();
+
+        /**
+         * The meta object literal for the '{@link org.eclipse.sirius.components.view.form.impl.AddImageOperationImpl
+         * <em>Add Image Operation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see org.eclipse.sirius.components.view.form.impl.AddImageOperationImpl
+         * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getAddImageOperation()
+         * @generated
+         */
+        EClass ADD_IMAGE_OPERATION = eINSTANCE.getAddImageOperation();
+
+        /**
+         * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference ADD_IMAGE_OPERATION__BODY = eINSTANCE.getAddImageOperation_Body();
+
+        /**
+         * The meta object literal for the '{@link org.eclipse.sirius.components.view.form.impl.RemoveImageOperationImpl
+         * <em>Remove Image Operation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see org.eclipse.sirius.components.view.form.impl.RemoveImageOperationImpl
+         * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getRemoveImageOperation()
+         * @generated
+         */
+        EClass REMOVE_IMAGE_OPERATION = eINSTANCE.getRemoveImageOperation();
+
+        /**
+         * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference REMOVE_IMAGE_OPERATION__BODY = eINSTANCE.getRemoveImageOperation_Body();
+
+        /**
          * The meta object literal for the '{@link org.eclipse.sirius.components.view.form.impl.LabelDescriptionImpl
          * <em>Label Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
@@ -7705,6 +8301,36 @@ public interface FormPackage extends EPackage {
          * @generated
          */
         EClass CONDITIONAL_CHECKBOX_DESCRIPTION_STYLE = eINSTANCE.getConditionalCheckboxDescriptionStyle();
+
+        /**
+         * The meta object literal for the
+         * '{@link org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionStyleImpl <em>Image Picker
+         * Description Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see org.eclipse.sirius.components.view.form.impl.ImagePickerDescriptionStyleImpl
+         * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getImagePickerDescriptionStyle()
+         * @generated
+         */
+        EClass IMAGE_PICKER_DESCRIPTION_STYLE = eINSTANCE.getImagePickerDescriptionStyle();
+
+        /**
+         * The meta object literal for the '<em><b>Color</b></em>' reference feature. <!-- begin-user-doc --> <!--
+         * end-user-doc -->
+         *
+         * @generated
+         */
+        EReference IMAGE_PICKER_DESCRIPTION_STYLE__COLOR = eINSTANCE.getImagePickerDescriptionStyle_Color();
+
+        /**
+         * The meta object literal for the
+         * '{@link org.eclipse.sirius.components.view.form.impl.ConditionalImagePickerDescriptionStyleImpl
+         * <em>Conditional Image Picker Description Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see org.eclipse.sirius.components.view.form.impl.ConditionalImagePickerDescriptionStyleImpl
+         * @see org.eclipse.sirius.components.view.form.impl.FormPackageImpl#getConditionalImagePickerDescriptionStyle()
+         * @generated
+         */
+        EClass CONDITIONAL_IMAGE_PICKER_DESCRIPTION_STYLE = eINSTANCE.getConditionalImagePickerDescriptionStyle();
 
         /**
          * The meta object literal for the
