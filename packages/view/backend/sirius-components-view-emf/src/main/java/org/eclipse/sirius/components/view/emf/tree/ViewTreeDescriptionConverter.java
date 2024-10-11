@@ -265,18 +265,18 @@ public class ViewTreeDescriptionConverter implements IRepresentationDescriptionC
         ITreeItemContextMenuEntry result = null;
         if (viewTreeItemContextAction instanceof SingleClickTreeItemContextMenuEntry viewSimpleAction) {
             result = org.eclipse.sirius.components.trees.SingleClickTreeItemContextMenuEntry.newSingleClickTreeItemContextMenuEntry(UUID.randomUUID().toString())
-                    .label(variableMananger -> this.evaluateString(interpreter, variableMananger, viewSimpleAction.getLabelExpression()))
-                    .iconURL(variableMananger -> this.evaluateStringList(interpreter, variableMananger, viewSimpleAction.getIconURLExpression()))
-                    .precondition(variableMananger -> this.evaluateBoolean(interpreter, variableMananger, viewSimpleAction.getPreconditionExpression()))
-                    .handler(variableMananger -> this.executeOperations(interpreter, variableMananger, viewSimpleAction.getBody()))
+                    .label(variableManager -> this.evaluateString(interpreter, variableManager, viewSimpleAction.getLabelExpression()))
+                    .iconURL(variableManager -> this.evaluateStringList(interpreter, variableManager, viewSimpleAction.getIconURLExpression()))
+                    .precondition(variableManager -> this.evaluateBoolean(interpreter, variableManager, viewSimpleAction.getPreconditionExpression()))
+                    .handler(variableManager -> this.executeOperations(interpreter, variableManager, viewSimpleAction.getBody()))
                     .build();
         } else if (viewTreeItemContextAction instanceof FetchTreeItemContextMenuEntry viewFetchAction) {
             result = org.eclipse.sirius.components.trees.FetchTreeItemContextMenuEntry.newFetchTreeItemContextMenuEntry(UUID.randomUUID().toString())
-                    .label(variableMananger -> this.evaluateString(interpreter, variableMananger, viewFetchAction.getLabelExpression()))
-                    .iconURL(variableMananger -> this.evaluateStringList(interpreter, variableMananger, viewFetchAction.getIconURLExpression()))
-                    .precondition(variableMananger -> this.evaluateBoolean(interpreter, variableMananger, viewFetchAction.getPreconditionExpression()))
-                    .urlToFetch(variableMananger -> this.evaluateString(interpreter, variableMananger, viewFetchAction.getUrlExression()))
-                    .fetchKind(variableMananger -> this.convertFetchKind(viewFetchAction.getKind()))
+                    .label(variableManager -> this.evaluateString(interpreter, variableManager, viewFetchAction.getLabelExpression()))
+                    .iconURL(variableManager -> this.evaluateStringList(interpreter, variableManager, viewFetchAction.getIconURLExpression()))
+                    .precondition(variableManager -> this.evaluateBoolean(interpreter, variableManager, viewFetchAction.getPreconditionExpression()))
+                    .urlToFetch(variableManager -> this.evaluateString(interpreter, variableManager, viewFetchAction.getUrlExression()))
+                    .fetchKind(variableManager -> this.convertFetchKind(viewFetchAction.getKind()))
                     .build();
         }
         return result;
