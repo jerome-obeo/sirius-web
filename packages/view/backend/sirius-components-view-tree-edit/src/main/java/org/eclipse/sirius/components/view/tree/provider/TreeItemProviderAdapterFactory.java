@@ -197,6 +197,30 @@ public class TreeItemProviderAdapterFactory extends TreeAdapterFactory implement
     }
 
     /**
+     * This keeps track of the one adapter used for all
+     * {@link org.eclipse.sirius.components.view.tree.ForTreeItemLabelElementDescription} instances. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ForTreeItemLabelElementDescriptionItemProvider forTreeItemLabelElementDescriptionItemProvider;
+
+    /**
+     * This creates an adapter for a {@link org.eclipse.sirius.components.view.tree.ForTreeItemLabelElementDescription}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createForTreeItemLabelElementDescriptionAdapter() {
+        if (forTreeItemLabelElementDescriptionItemProvider == null) {
+            forTreeItemLabelElementDescriptionItemProvider = new ForTreeItemLabelElementDescriptionItemProvider(this);
+        }
+
+        return forTreeItemLabelElementDescriptionItemProvider;
+    }
+
+    /**
      * This creates an adapter for a {@link org.eclipse.sirius.components.view.tree.TreeItemLabelFragmentDescription}.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -379,6 +403,9 @@ public class TreeItemProviderAdapterFactory extends TreeAdapterFactory implement
         }
         if (ifTreeItemLabelElementDescriptionItemProvider != null) {
             ifTreeItemLabelElementDescriptionItemProvider.dispose();
+        }
+        if (forTreeItemLabelElementDescriptionItemProvider != null) {
+            forTreeItemLabelElementDescriptionItemProvider.dispose();
         }
         if (treeItemLabelFragmentDescriptionItemProvider != null) {
             treeItemLabelFragmentDescriptionItemProvider.dispose();

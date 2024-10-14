@@ -104,6 +104,7 @@ never, always and if_children (to display the separator only if children exist).
 Project template images will now have a predictable size of 150px by 110px.
 This will allow specifier to create images that fir perfectly in the project template card.
 - https://github.com/eclipse-sirius/sirius-web/issues/4095[#4095] Add conditional tree item label element description
+- https://github.com/eclipse-sirius/sirius-web/issues/4101[#4101] Add loop tree item label element description
 
 
 == v2024.9.0
